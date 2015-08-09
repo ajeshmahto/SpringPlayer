@@ -1,16 +1,13 @@
 package edu.com.mum.domain;
 
+import java.util.ArrayList;
+import java.util.List;
 
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
 
-
-@Entity
 public class User { 
 	
-@Id @GeneratedValue
+
 	private Long id;
 	
 
@@ -20,6 +17,15 @@ public class User {
 	
 	
 
+	private List<Order> orders = new ArrayList<Order>();
+
+
+
+	private List<PaymentInfo> paymentInfos = new ArrayList<PaymentInfo>();
+
+
+
+	private UserProfile userProfile;
 
 
 	public User() {
@@ -37,10 +43,16 @@ public class User {
 		return id;
 	}
 	
-
+	public List<Order> getOrders() {
+		return orders;
+	}
 	
 	public String getPassword() {
 		return password;
+	}
+	
+	public List<PaymentInfo> getPaymentInfos() {
+		return paymentInfos;
 	}
 	
 
@@ -50,6 +62,9 @@ public class User {
 	}
 
 
+	public UserProfile getUserProfile() {
+		return userProfile;
+	}
 
 
 	public void setId(Long id) {
@@ -57,9 +72,18 @@ public class User {
 	}
 
 
+	public void setOrders(List<Order> orders) {
+		this.orders = orders;
+	}
+
 
 	public void setPassword(String password) {
 		this.password = password;
+	}
+
+
+	public void setPaymentInfos(List<PaymentInfo> paymentInfos) {
+		this.paymentInfos = paymentInfos;
 	}
 
 
@@ -68,5 +92,9 @@ public class User {
 	}
 
 
-
+	public void setUserProfile(UserProfile userProfile) {
+		this.userProfile = userProfile;
+	}
+	
+	
 }
