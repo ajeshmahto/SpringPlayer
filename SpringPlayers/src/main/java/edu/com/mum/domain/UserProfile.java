@@ -1,11 +1,5 @@
 package edu.com.mum.domain;
 
-import javax.persistence.AttributeOverride;
-import javax.persistence.AttributeOverrides;
-import javax.persistence.Column;
-import javax.persistence.Embedded;
-
-
 
 public class UserProfile {
 	
@@ -28,22 +22,7 @@ public class UserProfile {
 
 	private String phone;
 	
-	@Embedded
-	@AttributeOverrides({
-		@AttributeOverride(name="lineOne", column=@Column(name="SHIPPING_LINE_ONE")),
-		@AttributeOverride(name="lineTwo", column=@Column(name="SHIPPING_LINE_TWO")),
-		@AttributeOverride(name="state", column=@Column(name="SHIPPING_STATE")),
-		@AttributeOverride(name="zipCode", column=@Column(name="SHIPPING_ZIP_CODE"))
-	})
-	private Address shippingAddress;
 	
-	@Embedded
-	@AttributeOverrides({
-		@AttributeOverride(name="lineOne", column=@Column(name="BILLING_LINE_ONE")),
-		@AttributeOverride(name="lineTwo", column=@Column(name="BILLING_LINE_TWO")),
-		@AttributeOverride(name="state", column=@Column(name="BILLING_STATE")),
-		@AttributeOverride(name="zipCode", column=@Column(name="BILLING_ZIP_CODE"))
-	})	
 	private Address billingAddress;
 
 	public Long getId() {
@@ -86,13 +65,7 @@ public class UserProfile {
 		this.email = email;
 	}
 
-	public Address getShippingAddress() {
-		return shippingAddress;
-	}
 
-	public void setShippingAddress(Address shippingAddress) {
-		this.shippingAddress = shippingAddress;
-	}
 
 	public Address getBillingAddress() {
 		return billingAddress;

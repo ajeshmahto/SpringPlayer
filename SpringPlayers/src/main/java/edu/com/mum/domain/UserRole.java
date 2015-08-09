@@ -55,17 +55,6 @@ public class UserRole {
 		this.userrole = userrole;
 	}
 	
-	public boolean isAdmin()
-	{
-		if(userrole!=null)
-		{
-			if(userrole.equals(RoleType.ROLE_ADMIN))
-			{
-				return true;
-			}
-		}
-		
-		return false;
-	}
+
 
 }
