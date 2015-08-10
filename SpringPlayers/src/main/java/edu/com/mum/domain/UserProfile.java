@@ -1,28 +1,63 @@
 package edu.com.mum.domain;
 
+import javax.persistence.AttributeOverride;
+import javax.persistence.AttributeOverrides;
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Embedded;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.OneToOne;
+import javax.validation.constraints.Size;
 
+import org.hibernate.validator.constraints.NotEmpty;
+
+
+
+@Entity
 public class UserProfile {
 	
-
+	@Id @GeneratedValue
+	@Column(name="USER_PROFILE_ID")
 	private Long id;
 	
-	
-
+	@OneToOne(cascade=CascadeType.ALL,fetch=FetchType.EAGER)
 	private User user;
 	
-
+	@Column(name="FIRST_NAME")
+	//@NotEmpty(message="firstName should NOT be Empty")
 	private String firstName;
 	
-
+	@Column(name="LAST_NAME")
+	@NotEmpty(message="firstName should NOT be Empty")
 	private String lastName;
 	
-
+	@Column(name="EMAIL")
+	//@NotEmpty(message="firstName should NOT be Empty")
+	//@Size(min=6,max=25,message="The size should be between 6 and 25")
 	private String email;
 	
-
+	@Column(name="PHONE")
 	private String phone;
 	
+	@Embedded
+	@AttributeOverrides({
+		@AttributeOverride(name="lineOne", column=@Column(name="SHIPPING_LINE_ONE")),
+		@AttributeOverride(name="lineTwo", column=@Column(name="SHIPPING_LINE_TWO")),
+		@AttributeOverride(name="state", column=@Column(name="SHIPPING_STATE")),
+		@AttributeOverride(name="zipCode", column=@Column(name="SHIPPING_ZIP_CODE"))
+	})
+	private Address shippingAddress;
 	
+	@Embedded
+	@AttributeOverrides({
+		@AttributeOverride(name="lineOne", column=@Column(name="BILLING_LINE_ONE")),
+		@AttributeOverride(name="lineTwo", column=@Column(name="BILLING_LINE_TWO")),
+		@AttributeOverride(name="state", column=@Column(name="BILLING_STATE")),
+		@AttributeOverride(name="zipCode", column=@Column(name="BILLING_ZIP_CODE"))
+	})	
 	private Address billingAddress;
 
 	public Long getId() {
@@ -81,6 +116,14 @@ public class UserProfile {
 
 	public void setPhone(String phone) {
 		this.phone = phone;
+	}
+
+	public Address getShippingAddress() {
+		return shippingAddress;
+	}
+
+	public void setShippingAddress(Address shippingAddress) {
+		this.shippingAddress = shippingAddress;
 	}
 	
 	

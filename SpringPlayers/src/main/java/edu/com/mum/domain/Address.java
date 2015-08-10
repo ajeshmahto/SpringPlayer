@@ -1,19 +1,22 @@
 package edu.com.mum.domain;
 
+import javax.persistence.Column;
+import javax.persistence.Embeddable;
 
-
+@Embeddable
 public class Address {
 	
 
+	@Column(name="LINE_ONE")
 	private String lineOne; 
 	
-
+	@Column(name="LINE_TWO")
 	private String lineTwo;
-
 	
+	@Column(name="STATE")
 	private String state;
 	
-
+	@Column(name="ZIP_CODE")
 	private long zipCode;
 
 	public Address() {
