@@ -3,28 +3,38 @@ package edu.com.mum.domain;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Transient;
 
 
 
 
 
 
+@Entity(name= "PRODUCT")
 public class Product {
 	
-
+	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO)
 	private Long id;
 	
-
+	@Column(name="PRODUCTNAME")
 	private String name;
 	
-
+	@Column(name="PRICE")
 	private Float price;
-
-	private List<String> details = new ArrayList<String>();
 	
-
-
-
+	@Column(name="DETAILS")
+	private String details;
+	
+	@Column(name="QUANTITY")
+	private int quantity;
+	
+	@Transient
 	private Catagory catagory;
 
 
@@ -37,9 +47,7 @@ public class Product {
 		return catagory;
 	}
 	
-	public List<String> getDetails() {
-		return details;
-	}
+	
 
 	public Long getId() {
 		return id;
@@ -58,9 +66,7 @@ public class Product {
 		this.catagory = catagory;
 	}
 
-	public void setDetails(List<String> details) {
-		this.details = details;
-	}
+	
 
 	public void setId(Long id) {
 		this.id = id;
@@ -72,6 +78,22 @@ public class Product {
 
 	public void setPrice(Float price) {
 		this.price = price;
+	}
+
+	public String getDetails() {
+		return details;
+	}
+
+	public void setDetails(String details) {
+		this.details = details;
+	}
+
+	public int getQuantity() {
+		return quantity;
+	}
+
+	public void setQuantity(int quantity) {
+		this.quantity = quantity;
 	}
 
 
