@@ -19,19 +19,15 @@
 	</bean>
 	
 	<bean id= "messageSource" class="org.springframework.context.support.ResourceBundleMessageSource">
-   		<property name="basenames" value="messages,errormessages"/> 
+   		<property name="basenames" value="messages"/> 
 	</bean>
 	
 	<mvc:resources  location="/resources/"  mapping="/resources/**"/>
 	
 
 	
-	<bean id= "errorMessageSource" class="org.springframework.context.support.ResourceBundleMessageSource">
-   		<property name="basename" value="errormessages"/> 
-	</bean>
-	
-	<bean id="validator" class="org.springframework.validation.beanvalidation.LocalValidatorFactoryBean">
-		<property name="validationMessageSource" ref="errorMessageSource" />
+ 	<bean id="validator" class="org.springframework.validation.beanvalidation.LocalValidatorFactoryBean">
+		<property name="validationMessageSource" ref="messageSource" />
 	</bean>
 
 	<bean id="tilesViewResolver"
