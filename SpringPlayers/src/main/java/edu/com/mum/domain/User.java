@@ -31,12 +31,12 @@ public class User {
 	private String password;
 	
 	
-	@OneToMany(cascade=CascadeType.ALL,fetch=FetchType.EAGER, mappedBy="user")
+/*	@OneToMany(cascade=CascadeType.ALL,fetch=FetchType.EAGER, mappedBy="user")
 	private List<Order> orders = new ArrayList<Order>();
 
 
 	@OneToMany(cascade=CascadeType.ALL, mappedBy="user", fetch=FetchType.EAGER)
-	private List<PaymentInfo> paymentInfos = new ArrayList<PaymentInfo>();
+	private List<PaymentInfo> paymentInfos = new ArrayList<PaymentInfo>();*/
 
 
 	@OneToOne(cascade = CascadeType.ALL, fetch=FetchType.EAGER)
@@ -59,18 +59,18 @@ public class User {
 		return id;
 	}
 	
-	public List<Order> getOrders() {
+/*	public List<Order> getOrders() {
 		return orders;
 	}
-
+*/
 	public String getPassword() {
 		return password;
 	}
 	
-	public List<PaymentInfo> getPaymentInfos() {
+/*	public List<PaymentInfo> getPaymentInfos() {
 		return paymentInfos;
 	}
-	
+	*/
 
 
 	public String getUsername() {
@@ -88,20 +88,20 @@ public class User {
 	}
 
 
-	public void setOrders(List<Order> orders) {
+/*	public void setOrders(List<Order> orders) {
 		this.orders = orders;
 	}
-
+*/
 
 	public void setPassword(String password) {
 		this.password = password;
 	}
 
 
-	public void setPaymentInfos(List<PaymentInfo> paymentInfos) {
+/*	public void setPaymentInfos(List<PaymentInfo> paymentInfos) {
 		this.paymentInfos = paymentInfos;
 	}
-
+*/
 
 	public void setUsername(String username) {
 		this.username = username;
