@@ -13,7 +13,7 @@
  
     
    <!-- Scan for  transaction-based resources -->
-   	<context:component-scan base-package="edu.com.mum.service" />
+   	<context:component-scan base-package="edu.com.mum.serviceImpl" />
   	<context:component-scan base-package="edu.com.mum.domain" />
    	<context:component-scan base-package="edu.com.mum.repository" />
     
@@ -77,24 +77,7 @@
 
 
 
-<!-- bean id="database.dataSource" class="org.springframework.jdbc.datasource.LazyConnectionDataSourceProxy">
-    <constructor-arg>
-        <bean class="org.springframework.jdbc.datasource.SimpleDriverDataSource">
-            <property name="driverClass" value="org.h2.Driver" />
-            <property name="url"
-                value="jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;MODE=MySQL;TRACE_LEVEL_SYSTEM_OUT=2" />
-        </bean>
-    </constructor-arg>
-</bean-->
 
-   <bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
-      <property name="entityManagerFactory" ref="entityManager" />
-   </bean>
- <!--
-        Post-processor to perform exception translation on @Repository classes
-        (from native exceptions such as JPA PersistenceExceptions to
-        Spring&rsquo;s DataAccessException hierarchy).
-    -->
    <bean id="persistenceExceptionTranslationPostProcessor"
       class="org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor" />
  
