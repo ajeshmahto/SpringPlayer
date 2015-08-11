@@ -44,7 +44,7 @@ public class UserController {
 		customerService.save(userProfile);
 		
 		
-        return "redirect:allUsers";
+        return "userFinishRegistration";
     }
 	
 
@@ -80,6 +80,21 @@ public class UserController {
      
         return "editUser";
     }
+	
+	
+	@RequestMapping(value = "/update", method = RequestMethod.POST)
+    public String registrationUpdate( @ModelAttribute("userProfile") @Valid UserProfile userProfile, BindingResult result) {
+
+		if(result.hasErrors()) 
+			return "registration";
+		
+		customerService.save(userProfile);
+		
+		
+        return "redirect:allUsers";
+    }
+	
+	
 	
 	
 	@ModelAttribute("users")	   

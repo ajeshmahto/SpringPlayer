@@ -19,7 +19,7 @@
 			</div>
 
 
-<spring:url var = "user_update" value="/users/registration" />
+<spring:url var = "user_update" value="/users/update" />
 
 		<form:form  modelAttribute="userProfile" action= "${user_update}" >
 

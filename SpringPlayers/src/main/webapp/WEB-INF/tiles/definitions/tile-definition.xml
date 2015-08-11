@@ -93,10 +93,17 @@
         <put-attribute name="tagline" value="allUsers" />
         <put-attribute name="body" value="/WEB-INF/views/allUsers.jsp"/>
       </definition>
-         <definition name="userDetails" extends="baseLayout">
+      <definition name="userDetails" extends="baseLayout">
         <put-attribute name="userDetails" value="userDetails" />
         <put-attribute name="tagline" value="userDetails" />
         <put-attribute name="body" value="/WEB-INF/views/userDetails.jsp"/>
       </definition>
+      <definition name="userFinishRegistration" extends="baseLayout">
+        <put-attribute name="userDetails" value="userFinishRegistration" />
+        <put-attribute name="tagline" value="userFinishRegistration" />
+        <put-attribute name="body" value="/WEB-INF/views/userFinishRegistration.jsp"/>
+      </definition>
+      
+    
     
     </tiles-definitions>
