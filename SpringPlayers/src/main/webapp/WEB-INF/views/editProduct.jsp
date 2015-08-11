@@ -14,7 +14,8 @@
 <spring:url var = "product_update" value="/products/product_update" />
 
 
-<div id="global">
+<div id="signup-form">
+<div id= "signup-inner">
 <form:form commandName="product" action= "${product_update}" >
     <fieldset>
         <legend>Edit a product</legend>
@@ -48,6 +49,7 @@
         </p>
     </fieldset>
 </form:form>
+</div>
 </div>
 </body>
 </html>

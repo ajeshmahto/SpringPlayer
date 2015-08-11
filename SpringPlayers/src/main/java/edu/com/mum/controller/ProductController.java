@@ -55,25 +55,12 @@ public class ProductController {
        // List<Category> categories = bookService.getAllCategories();
         //model.addAttribute("categories", categories);
         Product product = productService.getProductByID(id);
-        model.addAttribute(product);
+        model.addAttribute("product", product);
      
         return "editProduct";
     }
  
-    // From Drop down list
-    @RequestMapping(value = "/editBook", method = RequestMethod.POST)
-    public String editProduct(@ModelAttribute("productSearch") Product searchProduct, Model model ) {
-//        List<Category> categories = bookService.getAllCategories();
-//        model.addAttribute("categories", categories);
-       Product product =productService.getProductByID(searchProduct.getId());
-       model.addAttribute(product);
- /*       
-        book = new Book();
-        book.setAuthor("Anybody");
-        model.addAttribute(book);
- */     
-        return "editProduct";
-    }
+  
 	
     
     @RequestMapping(value = "/product_update", method = RequestMethod.POST)

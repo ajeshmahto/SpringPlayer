@@ -12,6 +12,7 @@
 Spring Players
 </title>
 <style type="text/css">@import url("<spring:url value="/resources/css/style.css"/>");</style>
+<style type="text/css">@import url("<spring:url value="/resources/css/table.css"/>");</style>
 </head>
 <body>
 <div>

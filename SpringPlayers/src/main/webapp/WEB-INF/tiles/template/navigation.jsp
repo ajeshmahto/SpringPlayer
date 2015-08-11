@@ -16,7 +16,17 @@
 		</ul>
 	</li>
 	<li><a href="<spring:url value="/#"/>">Add Category</a></li>
-	<li><a href="<spring:url value="/product/addProduct"/>">Add Product</a></li>
+	<li>
+		<a href="<spring:url value="/"/>">Product</a>
+		<ul>
+		 <li><a href="products/addProduct">Add Product</a>
+		  <li><a href="products/productList">Product List</a>
+		</ul>
+		
+		
+		
+	
+	</li>
 	<security:authorize access="isAnonymous()">
 	<li><a href="<spring:url value="/login"/>">Login</a></li>
 	</security:authorize>
