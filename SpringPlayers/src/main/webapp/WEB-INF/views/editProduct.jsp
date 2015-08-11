@@ -5,7 +5,6 @@
 <html>
 <head>
 <title>Edit Book Form</title>
-<style type="text/css">@import url("<c:url value="/css/main.css"/>");</style>
 </head>
 <body>
 <spring:url var = "editBook" value="products/editBook" />

@@ -3,7 +3,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<style type="text/css">@import url("<c:url value="/css/main.css"/>");</style>
+
 <title>Welcome</title>
 </head>
 <body>

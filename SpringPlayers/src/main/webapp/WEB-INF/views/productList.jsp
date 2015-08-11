@@ -13,7 +13,7 @@
 		<br>
 
 		<!-- Query Parameter passing  -->
-		<spring:url value="/addProduct" var="addProduct_url">
+		<spring:url value="/products/addProduct" var="addProduct_url">
 		</spring:url>
 		<a href="${addProduct_url}">Add Product</a><br />
 
