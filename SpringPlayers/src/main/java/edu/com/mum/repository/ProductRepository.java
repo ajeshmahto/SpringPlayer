@@ -15,9 +15,9 @@ import org.springframework.data.repository.query.Param;
 public interface ProductRepository extends CrudRepository<Product, Integer>{
 	
 	@Query("SELECT p FROM PRODUCT p ")
-	public List<Product> getALlProduct();
+	public List<Product> getALlProducts();
 	
-	@Query("SELECT p FROM PRODUCT p where productId =:productId")
+	@Query("SELECT p FROM PRODUCT p where id =:productId")
 	public Product getProductByID(@Param("productId") int id);
 	//public List<Product> getProductsByCategory(String category);
 	//public void save(Product product);

@@ -20,7 +20,7 @@ public class ProductServiceImpl implements ProductService{
 	@Override
 	public List<Product> getAllProducts() {
 		// TODO Auto-generated method stub
-		return productRepository.getALlProduct();
+		return productRepository.getALlProducts();
 	}
 
 	
@@ -42,8 +42,20 @@ public Product getProductByID(int id) {
 	// TODO Auto-generated method stub
 	return productRepository.getProductByID(id);
 }
+
+
+
+@Override
+public void delete(int id) {
+	productRepository.delete(id);
 	
 	
+}
+
+
+
+
+
 
 	
 	

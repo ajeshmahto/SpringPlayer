@@ -8,18 +8,24 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<title>
+Spring Players
+</title>
+<style type="text/css">@import url("<spring:url value="/resources/css/style.css"/>");</style>
 </head>
 <body>
+<div>
+		<tiles:insertAttribute name="header" />
+	</div>
 	<div>
 		<tiles:insertAttribute name="navigation" />
 	</div>
 
-	<div class="row">
+	<div >
 		<tiles:insertAttribute name="body" />
 	</div>
 
-	<div class="footer">
+	<div>
 		<tiles:insertAttribute name="footer" />
 	</div>
 </body>

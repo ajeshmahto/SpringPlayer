@@ -16,22 +16,22 @@ import org.hibernate.validator.constraints.NotEmpty;
 
 
 
-@Entity
+@Entity(name= "USERPROFILE")
 public class UserProfile {
 	
 	@Id @GeneratedValue
-	@Column(name="USER_PROFILE_ID")
+	@Column(name="USERID")
 	private Long id;
 	
 	@OneToOne(cascade=CascadeType.ALL,fetch=FetchType.EAGER)
 	private User user;
 	
 	@Column(name="FIRST_NAME")
-	//@NotEmpty(message="firstName should NOT be Empty")
+	@NotEmpty(message="{UserProfile.firstName.NotEmpty}")
 	private String firstName;
 	
 	@Column(name="LAST_NAME")
-	@NotEmpty(message="firstName should NOT be Empty")
+	@NotEmpty(message="{0} should NOT be Empty")
 	private String lastName;
 	
 	@Column(name="EMAIL")

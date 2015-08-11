@@ -16,7 +16,7 @@ import javax.persistence.PrimaryKeyJoinColumn;
 import org.hibernate.validator.constraints.NotEmpty;
 
 
-@Entity
+@Entity(name= "USER")
 public class User { 
 	
 	@Id @GeneratedValue

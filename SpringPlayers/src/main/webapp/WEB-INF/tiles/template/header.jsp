@@ -1,12 +1,13 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ taglib prefix="security" uri="http://www.springframework.org/security/tags"%>
 <%@ taglib prefix="tiles" uri="http://tiles.apache.org/tags-tiles"%>
 
+
 <div>
-	<h1>
-		<tiles:insertAttribute name="heading" />
-	</h1>
-	<p>
-		<tiles:insertAttribute name="tagline" />
+
+	<p style="float:right">
+
+		<security:authorize access="isAuthenticated()">
+  					Welcome  <security:authentication property="principal.username" />
+		</security:authorize>
 	</p>
 </div>
