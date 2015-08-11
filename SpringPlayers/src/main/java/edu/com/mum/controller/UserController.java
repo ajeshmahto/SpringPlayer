@@ -86,7 +86,7 @@ public class UserController {
     public String registrationUpdate( @ModelAttribute("userProfile") @Valid UserProfile userProfile, BindingResult result) {
 
 		if(result.hasErrors()) 
-			return "registration";
+			return "editUser";
 		
 		customerService.save(userProfile);
 		

@@ -10,9 +10,10 @@
 	<li class="active" ><a href="<spring:url value="/"/>">Home</a></li>
 	
 	<li>
-		<a href="<spring:url value="/users/registration"/>">Register User</a>
+			<a href="<spring:url value="#"/> ">Register User</a>
 		<ul>
-		 <li><a href="#">Registration Sub Menu 1</a>
+		 	<li><a href="<spring:url value="/users/registration"/>">Register User</a>
+		 	<li><a href="<spring:url value="/users/allUsers"/>">All Users</a>
 		</ul>
 	</li>
 	<li><a href="<spring:url value="/Category/categoryList"/>">Category</a></li>
