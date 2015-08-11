@@ -25,8 +25,9 @@
 
  
 <spring:url var = "addProduct" value="/products/addProduct" />
-<div id="global">
-<form:form modelAttribute="newProduct"  action= "${addProduct }" method="post">
+<div id="signup-form">
+<div id= "signup-inner">
+	<form:form modelAttribute="newProduct"  id ="send" action= "${addProduct }" method="post">
     <fieldset>
         <legend>Add a product</legend>
   		<p>
@@ -66,6 +67,8 @@
         </p>
     </fieldset>
 </form:form>
+</div>
+
 </div>
 </body>
 </html>

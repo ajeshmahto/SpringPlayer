@@ -33,6 +33,18 @@
         <put-attribute name="body" value="/WEB-INF/views/login.jsp"/>
       </definition>
       
+      <definition name="addProduct" extends="baseLayout">
+        <put-attribute name="title" value="addProduct" />
+        <put-attribute name="tagline" value="addProduct" />
+        <put-attribute name="body" value="/WEB-INF/views/addProduct.jsp"/>
+      </definition>
+      
+      <definition name="productList" extends="baseLayout">
+        <put-attribute name="title" value="productList" />
+        <put-attribute name="tagline" value="productList" />
+        <put-attribute name="body" value="/WEB-INF/views/productList.jsp"/>
+      </definition>
+      
       <definition name="error" extends="baseLayout">
         <put-attribute name="title" value="404 Page Not Found" />
         <put-attribute name="tagline" value="Error Page" />

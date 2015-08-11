@@ -16,8 +16,8 @@
 </spring:url>
 <a href="${addProduct_url}">Add Product</a><br/>
 
- 
- 
+ </div>
+<div class="CSSTableGenerator" > 
 <table>
 <tr>
 <!--     <th>Category</th>
@@ -52,6 +52,9 @@
 </c:forEach>
 </table>
 </div>
+ 
+ 
+            
  
 </body>
 </html>
