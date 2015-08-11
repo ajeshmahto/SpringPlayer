@@ -4,7 +4,7 @@
 <html>
 <head>
 <title>Product List</title>
-<style type="text/css">@import url("<spring:url value="/css/main.css"/>");</style>
+<!-- <style type="text/css">@import url("<spring:url value="/css/main.css"/>");</style> -->
 </head>
 <body>
 
@@ -37,13 +37,13 @@
         
         
         <!-- Spring:url for handling Spring template/@PathVariable -->
-        <spring:url value="/product_edit/{id}"  var="edit" >
+        <spring:url value="product_edit/{id}"  var="edit" >
    				<spring:param name="id" value="${product.id}" />
  		</spring:url>
          
         <td><a href="${edit}">Edit</a></td>
         
-        <spring:url value="/product_delete/{id}"  var="delete" >
+        <spring:url value="product_delete/{id}"  var="delete">
    				<spring:param name="id" value="${product.id}" />
  		</spring:url>
          

@@ -20,7 +20,7 @@ public class Product {
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
-	private Long id;
+	private int id;
 	
 	@Column(name="PRODUCTNAME")
 	private String name;
@@ -49,7 +49,7 @@ public class Product {
 	
 	
 
-	public Long getId() {
+	public int getId() {
 		return id;
 	}
 
@@ -68,7 +68,7 @@ public class Product {
 
 	
 
-	public void setId(Long id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 

@@ -8,53 +8,43 @@
 <style type="text/css">@import url("<c:url value="/css/main.css"/>");</style>
 </head>
 <body>
-<spring:url var = "editBook" value="/editBook" />
-<div id="rightList"> 
-	<form:form modelAttribute="bookSearch"  action= "${editBook}"   method="post">
-  <p>
-            	<label for="bookList"><spring:message code="book.book" /> </label>
-             	<form:select id="booklist" path="id" 
-                	items="${books}" itemLabel="title" itemValue="id"/>
-  
-             <input id="submit" type="submit" value="Edit Book">
-</p>
-    </form:form >
-</div>
+<spring:url var = "editBook" value="products/editBook" />
 
-<spring:url var = "book_update" value="/book_update" />
+
+<spring:url var = "product_update" value="/products/product_update" />
 
 
 <div id="global">
-<form:form commandName="book" action= "${book_update}" >
+<form:form commandName="product" action= "${product_update}" >
     <fieldset>
-        <legend>Edit a book</legend>
+        <legend>Edit a product</legend>
         <form:hidden path="id"/>
-        <p>
+        <%-- <p>
             <label for="category">Category: </label>
              <form:select id="category" path="category.id" items="${categories}"
                 itemLabel="name" itemValue="id"/>
+        </p> --%>
+        <p>
+            <label for="name">Name: </label>
+            <form:input id="name" path="name"/>
         </p>
         <p>
-            <label for="title">Title: </label>
-            <form:input id="title" path="title"/>
+            <label for="price">Price: </label>
+            <form:input id="price" path="price"/>
         </p>
         <p>
-            <label for="author">Author: </label>
-            <form:input id="author" path="author"/>
-        </p>
-        <p>
-            <label for="isbn">ISBN: </label>
-            <form:input id="isbn" path="isbn"/>
+            <label for="quantity">Quantity:</label>
+            <form:input id="qunatity" path="quantity"/>
         </p>
            <p>
-            <label for="publishDate">Publish Date: </label>
-            <form:input path="publishDate" id="publishDate" />
+            <label for="details">Details: </label>
+            <form:input path="details" id="details" />
          </p>
         
         <p id="buttons">
             <input id="reset" type="reset" tabindex="4">
             <input id="submit" type="submit" tabindex="5" 
-                value="Update Book">
+                value="Update Product">
         </p>
     </fieldset>
 </form:form>
