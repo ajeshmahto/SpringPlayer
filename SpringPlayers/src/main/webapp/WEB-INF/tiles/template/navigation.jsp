@@ -15,7 +15,7 @@
 		 <li><a href="#">Registration Sub Menu 1</a>
 		</ul>
 	</li>
-	<li><a href="<spring:url value="/#"/>">Add Category</a></li>
+	<li><a href="<spring:url value="/Category/categoryList"/>">Category</a></li>
 	<li>
 		<a href="<spring:url value="/"/>">Product</a>
 		<ul>

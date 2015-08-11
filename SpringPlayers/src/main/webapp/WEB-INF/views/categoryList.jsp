@@ -10,20 +10,38 @@
 <style type="text/css">@import url("<spring:url value="/css/main.css"/>");</style>
 </head>
 <body>
+
+<spring:url value="/Category/addCategory" var="addCategory" >
+</spring:url>
+<a href="${addCategory}">Add Product</a><br/>
 <table>
 <tr>
     <th>Id</th>
     <th>Category</th>
     
 </tr>
+
 <tr></tr>
  <c:forEach items="${categories}" var="category">
     <tr>
-        <td>${category.categoryName}</td>
+    <td>${category.id}<td>
+    <td>${category.categoryName}</td>
         
       
+         <!-- Spring:url for handling Spring template/@PathVariable -->
+        <spring:url value="category_edit/{id}"  var="edit" >
+   				<spring:param name="id" value="${category.id}" />
+ 		</spring:url>
+ 		 <td><a href="${edit}">Edit</a></td>
+ 		 
+ 		
+ 		 
+ 		 <spring:url value="/Category/category_delete/{id}"  var="delete" >
+   				<spring:param name="id" value="${category.id}" />
+ 		</spring:url>
          
-        <td><a href="${edit}">Edit</a></td>
+        <td><a href="${delete}">Delete</a></td>
+        
     </tr>
 </c:forEach>
 

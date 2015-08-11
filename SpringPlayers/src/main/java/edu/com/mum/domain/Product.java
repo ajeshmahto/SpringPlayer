@@ -34,8 +34,8 @@ public class Product {
 	@Column(name="QUANTITY")
 	private int quantity;
 	
-	@Transient
-	private Catagory catagory;
+	/*@Transient
+	private Catagory catagory;*/
 
 
 	
@@ -43,9 +43,9 @@ public class Product {
 		// TODO Auto-generated constructor stub
 	}
 	
-	public Catagory getCatagory() {
+	/*public Catagory getCatagory() {
 		return catagory;
-	}
+	}*/
 	
 	
 
@@ -62,9 +62,9 @@ public class Product {
 	}
 
 
-	public void setCatagory(Catagory catagory) {
+	/*public void setCatagory(Catagory catagory) {
 		this.catagory = catagory;
-	}
+	}*/
 
 	
 

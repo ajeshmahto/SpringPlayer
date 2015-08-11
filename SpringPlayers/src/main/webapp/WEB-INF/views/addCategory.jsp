@@ -13,15 +13,22 @@
 <body>
 
 
-<spring:url var = "addCategory" value="/Category/addCategory" />
-<div id="global">
-<form:form  modelAttribute="newCategory"  action= "${addCategory}" method="post">
+<!--BEGIN #signup-form -->
+		<div id="signup-form">
+
+			<!--BEGIN #subscribe-inner -->
+			<div id="signup-inner">
+
+				<div class="clearfix" id="header"></div>
+<form:form  modelAttribute="category"  action= "addCategory" method="post" id="send">
     <fieldset>
         <legend>Add a category</legend>
         
           <p>
-            <label for="Name">Name </label>
+            <label for="Name">Name : </label>
             <form:input id="categoryName" path="categoryName"/>
+            
+            <form:input id="id" path="id" type="hidden"/>
   		  	<div style="text-align: center;">
  				
  			</div>
@@ -29,10 +36,14 @@
         
         
         <p id="buttons">
-             <input id="submit" type="submit" value="Add Book">
+             <input id="submit" type="submit" value="Add Category">
         </p>
     </fieldset>
 </form:form>
+</div>
+</div>
+
+
 </div>
 </body>
 </html>

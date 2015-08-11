@@ -6,11 +6,15 @@ import edu.com.mum.domain.Category;
 
 
 
-
 public interface CategoryService {
 	
 	public void save (Category category);
 	public List<Category> findAll();
-	public void update();
+	//public void update();
 	public void delete(Category category);
+	Category get(long id);
+	Category update(Category category);
+	
+	Category getCategoryById(Long categoryId);
+	
 }
