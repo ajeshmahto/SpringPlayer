@@ -24,6 +24,20 @@
 	
 	<mvc:resources  location="/resources/"  mapping="/resources/**"/>
 	
+	
+	<!-- Used to handle Cookie or Session locale resolvers AUTOMATICALLY -->
+	
+	<mvc:interceptors>
+ 		<bean class= "org.springframework.web.servlet.i18n.LocaleChangeInterceptor">
+			<property name="paramName" value="language"/>
+	 	</bean>	 	
+ 	</mvc:interceptors>
+ 		<!-- this is the parameter that the interceptor looks for -->
+ 		
+	<bean id="localeResolver" class="org.springframework.web.servlet.i18n.SessionLocaleResolver">
+		<property name="defaultLocale" value="en_US"/>
+	</bean>
+	
 
 	
  	<bean id="validator" class="org.springframework.validation.beanvalidation.LocalValidatorFactoryBean">

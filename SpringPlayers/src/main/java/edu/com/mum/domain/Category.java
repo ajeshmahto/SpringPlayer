@@ -6,6 +6,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+import org.hibernate.validator.constraints.NotEmpty;
+
 @Entity(name = "CATEGORY")
 public class Category {
 	
@@ -14,6 +16,8 @@ public class Category {
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private Long id;
 	
+	
+	@NotEmpty
 	@Column(name="categoryName")
 	private String categoryName;
 	

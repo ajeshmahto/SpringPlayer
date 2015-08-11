@@ -29,6 +29,7 @@
             <label for="Name">Name : </label>
             <form:input id="categoryName" path="categoryName"/>
   		  	<div style="text-align: center;">
+  		  	 <form:input id="id" path="id" type="hidden"/>
  			</div>
         </p>
         

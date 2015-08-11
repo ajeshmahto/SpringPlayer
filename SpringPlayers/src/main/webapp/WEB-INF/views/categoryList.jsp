@@ -2,6 +2,7 @@
     pageEncoding="ISO-8859-1"%>
     <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
     <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
+    
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -13,34 +14,39 @@
 
 <spring:url value="/Category/addCategory" var="addCategory" >
 </spring:url>
-<a href="${addCategory}">Add Product</a><br/>
+<a href="${addCategory}">Add Category</a><br/>
+
+<div class="CSSTableGenerator" style="width: 600px; height: 150px;">
+	
 <table>
 <tr>
-    <th>Id</th>
-    <th>Category</th>
-    
+   <td>ID</td>
+	<td>Category</td>
+    <td></td>
+    <td></td>
 </tr>
 
-<tr></tr>
+
  <c:forEach items="${categories}" var="category">
     <tr>
-    <td>${category.id}<td>
+    <td>${category.id}</td>
     <td>${category.categoryName}</td>
         
-      
+       <td>
          <!-- Spring:url for handling Spring template/@PathVariable -->
-        <spring:url value="category_edit/{id}"  var="edit" >
-   				<spring:param name="id" value="${category.id}" />
+       
+ 		<a href="${edit}">Edit</a></td>
+ 		 
+ 		<spring:url value="category_edit/{id}"  var="edit" >   		
+ 		<spring:param name="id" value="${category.id}" />
  		</spring:url>
- 		 <td><a href="${edit}">Edit</a></td>
- 		 
  		
- 		 
+ 		 <td>
  		 <spring:url value="/Category/category_delete/{id}"  var="delete" >
    				<spring:param name="id" value="${category.id}" />
  		</spring:url>
          
-        <td><a href="${delete}">Delete</a></td>
+        <a href="${delete}">Delete</a></td>
         
     </tr>
 </c:forEach>
@@ -49,6 +55,6 @@
 </table>
 
 
-
+</div>
 </body>
 </html>
