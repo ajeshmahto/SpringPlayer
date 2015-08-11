@@ -39,6 +39,27 @@
         <put-attribute name="body" value="/WEB-INF/views/addProduct.jsp"/>
       </definition>
       
+      
+      
+       <definition name="addCategory" extends="baseLayout">
+        <put-attribute name="title" value="addCategory" />
+        <put-attribute name="tagline" value="addCategory" />
+        <put-attribute name="body" value="/WEB-INF/views/addCategory.jsp"/>
+      </definition>
+      
+       <definition name="editCategory" extends="baseLayout">
+        <put-attribute name="title" value="editCategory" />
+        <put-attribute name="tagline" value="editCategory" />
+        <put-attribute name="body" value="/WEB-INF/views/editCategory.jsp"/>
+      </definition>
+      
+      
+       <definition name="categoryList" extends="baseLayout">
+        <put-attribute name="title" value="categoryList" />
+        <put-attribute name="tagline" value="categoryList" />
+        <put-attribute name="body" value="/WEB-INF/views/categoryList.jsp"/>
+      </definition>
+      
       <definition name="productList" extends="baseLayout">
         <put-attribute name="title" value="productList" />
         <put-attribute name="tagline" value="productList" />

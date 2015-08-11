@@ -42,6 +42,7 @@ class CategoryController {
 		return  "redirect:categoryList";
 	}
 	
+	
 	 @RequestMapping(value = "/category_delete/{id}", method = RequestMethod.GET)
 	    public String deleteCategory(Model model, @PathVariable("id") long id, HttpServletRequest request) {
 		 	Category category = categoryService.getCategoryById(id);
@@ -58,15 +59,6 @@ class CategoryController {
        return "editCategory";
     }
 	
-	
- 
-    @RequestMapping(value = "/category_update", method = RequestMethod.POST)
-    public String updateBook(@ModelAttribute("category") Category category) {
-     //  categoryService.update(category);
-    	categoryService.save(category);
-        return "redirect:/Category/categoryList";
-    }
-    
 	
 /*@ModelAttribute("categories")
     private List<Category> getCategories(Model model)
