@@ -14,10 +14,17 @@ public class LoginController {
 		return "login";
 	}
 	
-	@RequestMapping(value="/logout", method=RequestMethod.GET)
+    @RequestMapping(value="/doLogout", method=RequestMethod.GET)
+	
 	public String logout()
 	{
-		return "logout";
+		return"redirect:/";
+	}
+	
+	@RequestMapping(value="/loginfailed", method=RequestMethod.GET)
+	public String loginfail()
+	{
+		return "login";
 	}
 
 }

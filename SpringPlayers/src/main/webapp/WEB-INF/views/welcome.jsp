@@ -8,10 +8,11 @@
 </head>
 <body>
 	<section>
-		<div class="jumbotron">
-			<div class="container">
-				<h1> ${greeting} </h1>
-				<p> ${tagline} </p>
+		<div >
+			<div >
+				<h1> ${greeting} </h1><br>
+				
+				
 			</div>
 		</div>
 	</section>
