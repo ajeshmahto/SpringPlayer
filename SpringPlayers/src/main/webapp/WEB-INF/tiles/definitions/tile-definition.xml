@@ -77,5 +77,26 @@
         <put-attribute name="tagline" value="Error Page" />
         <put-attribute name="body" value="/WEB-INF/views/error.jsp"/>
       </definition>
+      
+      <definition name="registration" extends="baseLayout">
+        <put-attribute name="title" value="User Registration" />
+        <put-attribute name="tagline" value="Registration" />
+        <put-attribute name="body" value="/WEB-INF/views/registration.jsp"/>
+      </definition>
+      <definition name="editUser" extends="baseLayout">
+        <put-attribute name="title" value="editUser" />
+        <put-attribute name="tagline" value="editUser" />
+        <put-attribute name="body" value="/WEB-INF/views/editUser.jsp"/>
+      </definition>
+      <definition name="allUsers" extends="baseLayout">
+        <put-attribute name="title" value="allUsers" />
+        <put-attribute name="tagline" value="allUsers" />
+        <put-attribute name="body" value="/WEB-INF/views/allUsers.jsp"/>
+      </definition>
+         <definition name="userDetails" extends="baseLayout">
+        <put-attribute name="userDetails" value="userDetails" />
+        <put-attribute name="tagline" value="userDetails" />
+        <put-attribute name="body" value="/WEB-INF/views/userDetails.jsp"/>
+      </definition>
     
     </tiles-definitions>

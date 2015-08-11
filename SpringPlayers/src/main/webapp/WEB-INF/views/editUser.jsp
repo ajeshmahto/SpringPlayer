@@ -6,13 +6,10 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 
-
-<title>Registration</title>
+<title>Update User Information</title>
 </head>
 <body>
-
-			
-<div id="signup-form">
+	<div id="signup-form">
 
 			<!--BEGIN #subscribe-inner -->
 			<div id="signup-inner">
@@ -22,11 +19,15 @@
 			</div>
 
 
+<spring:url var = "user_update" value="/users/registration" />
 
-		<form:form  modelAttribute="userProfile">
-    
-    	<fieldset>
-        <legend>Register a New User</legend>
+		<form:form  modelAttribute="userProfile" action= "${user_update}" >
+
+				
+<form:hidden path="id"/>
+
+<fieldset>
+        <legend>Update User's Information</legend>
         
 				 <form:errors path="*" cssClass="alert alert-danger" element="div"/>
 				<div>
@@ -137,7 +138,7 @@
 		
 				
 				  <p id="buttons">
-            		 <input id="submit" type="submit" value="Register">
+            		 <input id="submit" type="submit" value="Update">
        			  </p>
 				
 			 </fieldset>

@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+
+
 import edu.com.mum.domain.UserProfile;
 import edu.com.mum.repository.UserRepository;
 import edu.com.mum.service.UserService;
@@ -36,10 +38,12 @@ public class UserServiceImpl implements UserService {
 	}
 
 	
-/*	public void delete(String userID) {
+	public void delete(Long userID) {
 		customerRepository.delete(userID);
 		
+	}
+/*	public void update(Long userID, UserProfile userProfile) {
+		customerRepository.update(userID, userProfile);
 	}*/
-	
 	
 }

@@ -8,14 +8,10 @@
 
 	
 	<style type="text/css">@import url("<c:url value="/resources/css/main.css"/>");</style>
-<title>Products</title>
+<title>Users</title>
 </head>
 <body>
-	<section>
 
-				<h1>Users</h1>
-
-	</section>
 	<div id="global">
 	<section class="container" >
 
@@ -26,8 +22,7 @@
 </div>
 		
 			<div>
-				<h3>${user.firstName}</h3>
-				<p>${user.lastName}</p>
+				<h1>${user.firstName} ${user.lastName} 's Details: </h1><br /><br /><br />
 				<p>
 					<strong>ID : </strong><span >${user.id}</span>
 				</p>
@@ -47,7 +42,7 @@
 			
 				
 
- <a href="<spring:url value="all" />" class="button">
+ <a href="<spring:url value="allUsers" />" class="button">
 						<span></span> back
 					</a>
 

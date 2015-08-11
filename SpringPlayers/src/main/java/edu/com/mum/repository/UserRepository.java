@@ -19,9 +19,9 @@ import edu.com.mum.domain.UserProfile;
 		@Query("SELECT u FROM USERPROFILE u where id = :userId")
 	    UserProfile getUserById(@Param("userId") Long key);
 		
-		//void delete(String userID);
+		//void delete(Long userID);
 		
-		//void update(String userID, UserProfile userProfile);
+		//void update(Long userID, UserProfile userProfile);
 
 		
   	}
