@@ -31,8 +31,9 @@
 				<td>Delete</td>
 			</tr>
 
-			<tr>
+			
 				<c:forEach items="${products}" var="product">
+				<tr>
 					<%-- <td>${product.category.name}</td> --%>
 					<td>${product.name}</td>
 					<td>${product.price}</td>
@@ -52,8 +53,9 @@
 					</spring:url>
 
 					<td><a href="${delete}">Delete</a></td>
+					</tr>
 				</c:forEach>
-			</tr>
+			
 
 		</table>
 	</div>
