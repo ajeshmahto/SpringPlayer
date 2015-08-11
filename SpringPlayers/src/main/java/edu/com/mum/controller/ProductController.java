@@ -30,6 +30,14 @@ public class ProductController {
  		return "productList";
 	}
 	
+	
+	@RequestMapping(value={"/", "/display"})
+	public String displayProducts(Model model) {
+ 
+ 		model.addAttribute("products", productService.getAllProducts());
+ 		return "products";
+	}
+	
 	@RequestMapping(value = "/addProduct", method = RequestMethod.GET)
 	public String addNewProduct(@ModelAttribute("newProduct") Product newProduct) {
 	   return "addProduct";

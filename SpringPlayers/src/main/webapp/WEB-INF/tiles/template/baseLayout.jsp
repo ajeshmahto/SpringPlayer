@@ -13,6 +13,8 @@ Spring Players
 </title>
 <style type="text/css">@import url("<spring:url value="/resources/css/style.css"/>");</style>
 <style type="text/css">@import url("<spring:url value="/resources/css/table.css"/>");</style>
+<style type="text/css">@import url("<spring:url value="/resources/css/submenu.css"/>");</style>
+<style type="text/css">@import url("<spring:url value="/resources/css/display.css"/>");</style>
 </head>
 <body>
 <div>
@@ -29,5 +31,8 @@ Spring Players
 	<div>
 		<tiles:insertAttribute name="footer" />
 	</div>
+<script src="<spring:url value="/resources/js/blocksit.js" />"></script>
+<script src="<spring:url value="/resources/js/blocksit.min.js" />"></script>
+<script src="<spring:url value="/resources/js/display.js" />"></script>
 </body>
 </html>

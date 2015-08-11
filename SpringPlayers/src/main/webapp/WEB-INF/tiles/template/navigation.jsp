@@ -19,7 +19,7 @@
 	<li><a href="<spring:url value="/Category/categoryList"/>">Category</a></li>
 	
 	<li>
-		<a href="<spring:url value="#"/>">Product</a>
+		<a href="<spring:url value="/products/display"/>">Product</a>
 		<ul>
 		 <li><a href="<spring:url value="/products/addProduct"/>">Add Product</a>
 		  <li><a href="<spring:url value="/products/productList"/>">Product List</a>

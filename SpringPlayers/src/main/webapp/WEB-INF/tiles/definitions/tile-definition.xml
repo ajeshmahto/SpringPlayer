@@ -104,6 +104,10 @@
         <put-attribute name="body" value="/WEB-INF/views/userFinishRegistration.jsp"/>
       </definition>
       
-    
+        <definition name="products" extends="baseLayout">
+        <put-attribute name="title" value="Products Display" />
+        <put-attribute name="tagline" value="Products Display" />
+        <put-attribute name="body" value="/WEB-INF/views/products.jsp"/>
+      </definition>
     
     </tiles-definitions>
