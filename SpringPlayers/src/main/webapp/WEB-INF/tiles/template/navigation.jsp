@@ -16,7 +16,12 @@
 		 	<li><a href="<spring:url value="/users/allUsers"/>">All Users</a>
 		</ul>
 	</li>
-	<li><a href="<spring:url value="/Category/categoryList"/>">Category</a></li>
+	<li><a href="<spring:url value="/Category/categoryList"/>">Category</a>
+	<ul>
+		 <li><a href="<spring:url value="/Category/addCategory"/>">Add Category</a>
+		  <li><a href="<spring:url value="/Category/categoryList"/>">Category List</a>
+		</ul>
+		</li>
 	
 	<li>
 		<a href="<spring:url value="/products/display"/>">Product</a>

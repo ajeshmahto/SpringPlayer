@@ -34,12 +34,14 @@
         
        <td>
          <!-- Spring:url for handling Spring template/@PathVariable -->
-       
- 		<a href="${edit}">Edit</a></td>
- 		 
- 		<spring:url value="category_edit/{id}"  var="edit" >   		
+         
+         
+       <spring:url value="/Category/category_edit/{id}"  var="edit" >   		
  		<spring:param name="id" value="${category.id}" />
  		</spring:url>
+ 		<a href="${edit}">Edit</a></td>
+ 		 
+ 		
  		
  		 <td>
  		 <spring:url value="/Category/category_delete/{id}"  var="delete" >

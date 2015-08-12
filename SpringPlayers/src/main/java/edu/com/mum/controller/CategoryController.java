@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import edu.com.mum.domain.Category;
+import edu.com.mum.expection.CategoryNotFoundExpection;
 import edu.com.mum.service.CategoryService;
 
 @Controller
@@ -26,7 +27,13 @@ class CategoryController {
 	
 	@RequestMapping(value={"/", "/categoryList"})
 	public String listCategory(Model model) {
-		model.addAttribute("categories", categoryService.findAll());
+		List<Category> category = categoryService.findAll();
+		if (category == null || category.isEmpty()) {
+			throw new CategoryNotFoundExpection();
+		}
+
+		model.addAttribute("categories", category);
+				//categoryService.findAll());
 		return "categoryList";
 	}
 	
@@ -66,5 +73,20 @@ class CategoryController {
     	 //model.addAttribute("categories", new Category());
           return categoryService.findAll();
     }*/
+    
+    @RequestMapping(value = "/throw", method = RequestMethod.GET)
+	public String throwException(@ModelAttribute("category") Category category) {
+	
+
+	Long categoryId = (long) 54;
+	category =  categoryService.getCategoryById(categoryId);
+	 if(category== null)
+	 {
+		 throw new CategoryNotFoundExpection(categoryId, null);
+	 }
+	 
+	 return "";
+	
+}
   
 }
