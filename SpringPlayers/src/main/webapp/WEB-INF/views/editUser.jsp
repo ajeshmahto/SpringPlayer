@@ -15,7 +15,7 @@
 			<div id="signup-inner">
 			<div class="clearfix" id="header"></div>
 			
-			<a href="?language=en" >English</a>|<a href="?language=nl" >Dutch</a>					
+						
 			</div>
 
 
@@ -29,12 +29,12 @@
 <fieldset>
         <legend>Update User's Information</legend>
         
-				 <form:errors path="*" cssClass="alert alert-danger" element="div"/>
+						 <form:errors path="*" cssStyle="color: red;" element="div"/>
 				<div>
 					<label for="username"><spring:message code="registration.form.username.label"/></label>
 					<div>
 						<form:input id="user.username" path="user.username" type="text" />
-						<form:errors path="user.username" cssClass="text-danger"/>
+						<form:errors path="user.username" cssStyle="color: red;" />
 					</div>
 				</div>
 
@@ -42,7 +42,7 @@
 					<label  for="password"><spring:message code="registration.form.password.label"/></label>
 					<div >
 						<form:input id="user.password" type="password"  path="user.password" />
-						<form:errors path="user.password" cssClass="text-danger"/>
+						<form:errors path="user.password" />
 					</div>
 				
 
@@ -50,7 +50,8 @@
 				
 					<label for="firstName"><spring:message code="registration.form.firstname.label"/></label>
 					<div>
-						<form:input id="firstName" path="firstName" type="text" />
+						<form:input id="firstName" path="firstName" type="text" /><br />
+						<form:errors path="firstName" cssStyle="color: red;" />
 					</div>
 			
 
@@ -58,7 +59,8 @@
 
 					<label for="lastName"><spring:message code="registration.form.lastname.label"/></label>
 					<div>
-						<form:input id="lastName" path="lastName" type="text" />
+						<form:input id="lastName" path="lastName" type="text" /><br />
+						<form:errors path="lastName" cssStyle="color: red;" />
 					</div>
 				
 				
@@ -66,7 +68,8 @@
 				<div>
 					<label  for="email"><spring:message code="registration.form.email.label"/></label>
 					<div>
-						<form:input id="email" path="email" type="text"/>
+						<form:input id="email" path="email" type="text"/><br />
+						<form:errors path="email" cssStyle="color: red;" />
 					</div>
 				</div>
 

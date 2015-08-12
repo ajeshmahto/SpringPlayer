@@ -86,6 +86,12 @@
         <put-attribute name="body" value="/WEB-INF/views/error.jsp"/>
       </definition>
       
+        <definition name="error-forbidden" extends="baseLayout">
+        <put-attribute name="title" value="403 Page Not Found" />
+        <put-attribute name="tagline" value="Error Page" />
+        <put-attribute name="body" value="/WEB-INF/views/error-forbidden.jsp"/>
+      </definition>
+      
       <definition name="registration" extends="baseLayout">
         <put-attribute name="title" value="User Registration" />
         <put-attribute name="tagline" value="Registration" />

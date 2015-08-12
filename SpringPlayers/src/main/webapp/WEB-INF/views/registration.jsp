@@ -1,3 +1,6 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"  %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
@@ -18,7 +21,7 @@
 			<div id="signup-inner">
 			<div class="clearfix" id="header"></div>
 			
-			<a href="?language=en" >English</a>|<a href="?language=nl" >Dutch</a>					
+							
 			</div>
 
 
@@ -26,14 +29,14 @@
 		<form:form  modelAttribute="userProfile">
     
     	<fieldset>
-        <legend>Register a New User</legend>
+        <legend><spring:message code="registration.form.newUser.label"/></legend>
         
-				 <form:errors path="*" cssClass="alert alert-danger" element="div"/>
+				 <form:errors path="*" cssStyle="color: red;" element="div"/>
 				<div>
 					<label for="username"><spring:message code="registration.form.username.label"/></label>
 					<div>
 						<form:input id="user.username" path="user.username" type="text" />
-						<form:errors path="user.username" cssClass="text-danger"/>
+						<form:errors path="user.username" cssStyle="color: red;" />
 					</div>
 				</div>
 
@@ -41,7 +44,7 @@
 					<label  for="password"><spring:message code="registration.form.password.label"/></label>
 					<div >
 						<form:input id="user.password" type="password"  path="user.password" />
-						<form:errors path="user.password" cssClass="text-danger"/>
+						<form:errors path="user.password" />
 					</div>
 				
 
@@ -49,7 +52,8 @@
 				
 					<label for="firstName"><spring:message code="registration.form.firstname.label"/></label>
 					<div>
-						<form:input id="firstName" path="firstName" type="text" />
+						<form:input id="firstName" path="firstName" type="text" /><br />
+						<form:errors path="firstName" cssStyle="color: red;" />
 					</div>
 			
 
@@ -57,7 +61,8 @@
 
 					<label for="lastName"><spring:message code="registration.form.lastname.label"/></label>
 					<div>
-						<form:input id="lastName" path="lastName" type="text" />
+						<form:input id="lastName" path="lastName" type="text" /><br />
+						<form:errors path="lastName" cssStyle="color: red;" />
 					</div>
 				
 				
@@ -65,7 +70,8 @@
 				<div>
 					<label  for="email"><spring:message code="registration.form.email.label"/></label>
 					<div>
-						<form:input id="email" path="email" type="text"/>
+						<form:input id="email" path="email" type="text"/><br />
+						<form:errors path="email" cssStyle="color: red;" />
 					</div>
 				</div>
 
@@ -75,7 +81,7 @@
 						<form:input id="phone" path="phone" type="text" />
 					</div>
 
-<br />Billing Address<br />
+<br /><spring:message code="registration.form.BillingAddress.label"/><br />
 		
 					<label  for="lineOne"><spring:message code="registration.form.lineOne.label"/></label>
 					<div>
@@ -104,8 +110,8 @@
 					</div>
 
 				
-<br />shipping Address<br />
 
+<br /><spring:message code="registration.form.shippingAddress.label"/><br />
 					<label  for="lineOne"><spring:message code="registration.form.lineOne.label"/></label>
 					<div>
 						<form:input id="lineOne" path="shippingAddress.lineOne" type="text"/>

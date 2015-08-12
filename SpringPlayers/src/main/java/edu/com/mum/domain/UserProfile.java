@@ -11,7 +11,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
 
-
+import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.NotEmpty;
 
 
@@ -35,8 +35,8 @@ public class UserProfile {
 	private String lastName;
 	
 	@Column(name="EMAIL")
-	//@NotEmpty(message="firstName should NOT be Empty")
-	//@Size(min=6,max=25,message="The size should be between 6 and 25")
+	
+	@NotEmpty @Email
 	private String email;
 	
 	@Column(name="PHONE")
