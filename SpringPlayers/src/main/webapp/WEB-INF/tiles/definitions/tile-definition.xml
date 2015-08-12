@@ -54,6 +54,14 @@
       </definition>
       
       
+      
+       <definition name="CategoryNotFound" extends="baseLayout">
+        <put-attribute name="title" value="CategoryNotFound" />
+        <put-attribute name="tagline" value="CategoryNotFound" />
+        <put-attribute name="body" value="/WEB-INF/views/CategoryNotFound.jsp"/>
+      </definition>
+      
+      
        <definition name="categoryList" extends="baseLayout">
         <put-attribute name="title" value="categoryList" />
         <put-attribute name="tagline" value="categoryList" />
