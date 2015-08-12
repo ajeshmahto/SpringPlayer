@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import edu.com.mum.domain.UserProfile;
+import edu.com.mum.expection.CategoryNotFoundExpection;
 import edu.com.mum.service.UserService;
 
 
@@ -29,7 +30,7 @@ public class UserController {
 
 	
 	@RequestMapping(value = "/registration", method = RequestMethod.GET)
-  	@PreAuthorize("hasRole('ROLE_USER')")   
+  	//@PreAuthorize("hasRole('ROLE_USER')")   
     public String getRegistration(@ModelAttribute("userProfile") UserProfile userProfile) {
 
 		
@@ -51,6 +52,10 @@ public class UserController {
 
 	@RequestMapping("/allUsers")
 	public String allUsers(Model model) {
+		List<UserProfile> userP =  customerService.getAllUsers();
+		if (userP == null || userP.isEmpty()) {
+			throw new CategoryNotFoundExpection();
+		}
 		
  		return "allUsers";
 	}
@@ -75,7 +80,7 @@ public class UserController {
 	
 	
 	@RequestMapping(value = "/user_edit/{id}", method = RequestMethod.GET)
-  	@PreAuthorize("hasRole('ROLE_USER')")   
+  	//@PreAuthorize("hasRole('ROLE_USER')")   
     public String editProduct(Model model, UserProfile userProfile, @PathVariable("id") long id) {
     
         userProfile = customerService.getUserById(id);
@@ -91,7 +96,7 @@ public class UserController {
 		if(result.hasErrors()) 
 			return "editUser";
 		
-		customerService.save(userProfile);
+		customerService.update(userProfile);
 		
 		
         return "redirect:allUsers";

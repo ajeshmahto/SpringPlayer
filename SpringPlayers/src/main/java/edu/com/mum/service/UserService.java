@@ -12,14 +12,15 @@ public interface UserService {
 	
 	public void save(UserProfile userProfile) ;
 	
-	
 	List<UserProfile> getAllUsers();
+	
 	
 	public UserProfile getUserById(Long userID);
 	
 	public void delete(Long userID);
 	
-	public void save(User user);
+
+	public void update(UserProfile userProfile);
 	
 	//void update(Long userID, UserProfile userProfile);
 	

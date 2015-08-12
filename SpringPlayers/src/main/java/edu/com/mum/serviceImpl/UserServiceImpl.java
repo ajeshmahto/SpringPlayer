@@ -28,7 +28,7 @@ public class UserServiceImpl implements UserService {
 	private CreditionalRepository creditionalRepository;
 
 	
-  	@PreAuthorize("hasRole('ROLE_ADMIN')")
+  	//@PreAuthorize("hasRole('ROLE_ADMIN')")
 	public void save(UserProfile userProfile) {
 		
 		customerRepository.save(userProfile);
@@ -51,9 +51,13 @@ public class UserServiceImpl implements UserService {
 		
 	}
 	
-	
+	@PreAuthorize("hasRole('ROLE_ADMIN')")
+	public void update(UserProfile userProfile) {
+		save(userProfile);	
+	}
 
-  	public void save(User user) {
+
+  	private void save(User user) {
 
   		PasswordEncoder passwordEncoder = new BCryptPasswordEncoder();   		
   		String encodedPassword = passwordEncoder.encode(user.getPassword());

@@ -26,13 +26,15 @@
 	<!-- Implemented with Web based URL - Controller "METHOD" level authorization -->
 	<!-- the more specific rules need to come first, followed by the more general ones. -->
 	<!-- COMmENT out the following to see @Service METHOD level authorization -->
-<!-- 	  <security:intercept-url pattern="/users/allUsers" access="hasRole('ROLE_ADMIN')" />   -->
+	  <security:intercept-url pattern="/users/allUsers" access="hasRole('ROLE_ADMIN')" />  
 	  <security:intercept-url pattern="/Category/addCategory" access="hasRole('ROLE_ADMIN')" />  
 	  <security:intercept-url pattern="/products/addProduct" access="hasRole('ROLE_ADMIN')" />  
 	  <security:intercept-url pattern="/products/productList" access="hasRole('ROLE_ADMIN')" />  
 	  <security:intercept-url pattern="/Category/categoryList" access="hasRole('ROLE_ADMIN')" /> 
-	
-	  	
+<!-- 	  <security:intercept-url pattern="/users/user_edit/**" access="hasRole('ROLE_ADMIN')" />  -->
+	   <security:intercept-url pattern="/products/product_edit/**" access="hasRole('ROLE_ADMIN')" /> 
+	    <security:intercept-url pattern="/Category/addCategory/**" access="hasRole('ROLE_ADMIN')" /> 
+	  
 
  	
 		<!-- always-use-default-target overrides where login was triggered -->
