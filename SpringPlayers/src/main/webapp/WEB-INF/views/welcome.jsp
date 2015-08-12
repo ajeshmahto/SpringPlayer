@@ -11,9 +11,17 @@
 
 	<div id='cssmenu'>
 		<ul>
-		<li><a href='#'><span>Category</span></a></li>
+			<li><a href='#'><span>Category</span></a></li>
 			<c:forEach items="${categories}" var="category">
-				<li><a href='#'><span>${category.categoryName}</span></a></li>
+
+
+				<spring:url value="Category/productCategory/{id}" var="show">
+					<spring:param name="id" value="${category.id}" />
+				</spring:url>
+
+
+
+				<li><a href="${show}"><span>${category.categoryName}</span></a></li>
 			</c:forEach>
 		</ul>
 	</div>

@@ -2,6 +2,7 @@
 <%@ taglib prefix="security" uri="http://www.springframework.org/security/tags"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
+<!DOCTYPE html><html>
 <style type="text/css">@import url("<spring:url value="/resources/css/menu.css"/>");</style>
 
 
@@ -13,7 +14,21 @@
 			<a href="<spring:url value="#"/> ">Register User</a>
 		<ul>
 		 	<li><a href="<spring:url value="/users/registration"/>">Register User</a>
+		 
+		 	
+	
+
+
+
+
+		 		<sec:authorize access="hasRole('ROLE_ADMIN')">
+		 	<%-- <security:authorize ifAnyGranted="isAuthenticated()"> --%>
+		 	<%-- <security:authorize access="ROLE_ADMIN"> --%>
+		 	
+		 	
 		 	<li><a href="<spring:url value="/users/allUsers"/>">All Users</a>
+		 </sec:authorize>
+		 <%-- 	</security:authorize> --%>
 		</ul>
 	</li>
 	<li><a href="<spring:url value="/Category/categoryList"/>">Category</a>
@@ -52,3 +67,4 @@
 			document.getElementById("logoutForm").submit();
 		}
 	</script>
+</html>

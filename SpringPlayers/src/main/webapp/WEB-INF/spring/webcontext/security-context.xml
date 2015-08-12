@@ -26,8 +26,17 @@
 	<!-- Implemented with Web based URL - Controller "METHOD" level authorization -->
 	<!-- the more specific rules need to come first, followed by the more general ones. -->
 	<!-- COMmENT out the following to see @Service METHOD level authorization -->
-	  <security:intercept-url pattern="/employees/add" access="hasRole('ROLE_ADMIN')" />  	
-	  <security:intercept-url pattern="/employees/list" access="hasAnyRole('ROLE_ADMIN','ROLE_USER')"  />
+	  <security:intercept-url pattern="/users/allUsers" access="hasRole('ROLE_ADMIN')" />  
+	  <security:intercept-url pattern="/Category/addCategory" access="hasRole('ROLE_ADMIN')" />  
+	  <security:intercept-url pattern="/products/addProduct" access="hasRole('ROLE_ADMIN')" />  
+	  <security:intercept-url pattern="/products/product_edit/**" access="hasRole('ROLE_ADMIN')" />  
+	  <security:intercept-url pattern="/products/product_delete/**" access="hasRole('ROLE_ADMIN')" /> 
+	  <security:intercept-url pattern="/Category/category_edit/**" access="hasRole('ROLE_ADMIN')" /> 
+	  <security:intercept-url pattern="/Category/category_delete/**" access="hasRole('ROLE_ADMIN')" /> 
+	
+	  	
+	  <security:intercept-url pattern="/Category/categoryList" access="hasAnyRole('ROLE_ADMIN','ROLE_USER')"  />
+	  <security:intercept-url pattern="/products/productList" access="hasAnyRole('ROLE_ADMIN','ROLE_USER')"  />
  	
 		<!-- always-use-default-target overrides where login was triggered -->
 		<!-- logout-url renames j_security_logout URL -->
@@ -50,18 +59,18 @@
 	</security:http>
 	
 
-	<!-- <security:authentication-manager>
+<!-- 	<security:authentication-manager>
 		<security:authentication-provider>
 			<security:password-encoder hash="bcrypt" />
 			<security:jdbc-user-service
 				data-source-ref="dataSource"
-				users-by-username-query="select username,password,enabled from users where username=?"
+				users-by-username-query="select username,password,enabled from user where username=?"
 				authorities-by-username-query="select u1.username, u2.authority from users u1, authorities u2 where u1.username = u2.username and u1.username =?" />
 		</security:authentication-provider>
 	</security:authentication-manager> -->
 
 
-	<security:authentication-manager>
+ 	<security:authentication-manager>
 		<security:authentication-provider>
 			
 			<security:user-service>
@@ -69,5 +78,5 @@
 				<security:user name="guest" password="guest" authorities="ROLE_USER" />
 			</security:user-service>
 		</security:authentication-provider>
-	</security:authentication-manager>
-</beans>
+	</security:authentication-manager> 
+</beans> 

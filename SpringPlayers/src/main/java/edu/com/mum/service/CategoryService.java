@@ -3,8 +3,7 @@ package edu.com.mum.service;
 import java.util.List;
 
 import edu.com.mum.domain.Category;
-
-
+import edu.com.mum.domain.Product;
 
 public interface CategoryService {
 	
@@ -16,5 +15,7 @@ public interface CategoryService {
 	Category update(Category category);
 	
 	Category getCategoryById(Long categoryId);
+	
+	public List<Product> getProductByCategoryId(Long categoryId);
 	
 }
