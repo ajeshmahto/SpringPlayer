@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import edu.com.mum.domain.UserProfile;
-import edu.com.mum.expection.CategoryNotFoundExpection;
+import edu.com.mum.expection.DataNotFoundException;
 import edu.com.mum.service.UserService;
 
 
@@ -54,7 +54,7 @@ public class UserController {
 	public String allUsers(Model model) {
 		List<UserProfile> userP =  customerService.getAllUsers();
 		if (userP == null || userP.isEmpty()) {
-			throw new CategoryNotFoundExpection();
+			throw new DataNotFoundException();
 		}
 		
  		return "allUsers";

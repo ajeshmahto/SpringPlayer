@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import edu.com.mum.domain.Category;
 import edu.com.mum.domain.Product;
-import edu.com.mum.expection.CategoryNotFoundExpection;
+import edu.com.mum.expection.DataNotFoundException;
 import edu.com.mum.service.CategoryService;
 
 @Controller
@@ -28,7 +28,7 @@ class CategoryController {
 	public String listCategory(Model model) {
 		List<Category> category = categoryService.findAll();
 		if (category == null || category.isEmpty()) {
-			throw new CategoryNotFoundExpection();
+			throw new DataNotFoundException();
 		}
 
 		model.addAttribute("categories", category);
@@ -75,7 +75,7 @@ class CategoryController {
 		Long categoryId = (long) category.getId(); //54;
 		category = categoryService.getCategoryById(categoryId);
 		if (category == null) {
-			throw new CategoryNotFoundExpection(categoryId, null);
+			throw new DataNotFoundException(categoryId, null);
 		}
 
 		return "";
@@ -89,7 +89,7 @@ class CategoryController {
 		System.out.println(products.size());
 		model.addAttribute("products", products);
 		if (products == null) {
-			throw new CategoryNotFoundExpection(id, null);
+			throw new DataNotFoundException(id, null);
 		}
 
 		return "productCategory";

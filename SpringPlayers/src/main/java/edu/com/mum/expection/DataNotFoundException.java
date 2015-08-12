@@ -1,16 +1,16 @@
 package edu.com.mum.expection;
 
-public class CategoryNotFoundExpection  extends RuntimeException{
+public class DataNotFoundException  extends RuntimeException{
  	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 9060751397339719682L;
 	private Long CategoryId;
-	private String message = "There is no Category";
+	private String message = "Data Not Found";
 	
- 	public CategoryNotFoundExpection() {}
+ 	public DataNotFoundException() {}
 	
-	public CategoryNotFoundExpection(Long CategoryId, String message) {
+	public DataNotFoundException(Long CategoryId, String message) {
 		this.CategoryId = CategoryId;
 
 		if (message != null) this.message = message;

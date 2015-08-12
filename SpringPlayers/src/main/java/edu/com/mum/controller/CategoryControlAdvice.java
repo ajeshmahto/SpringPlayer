@@ -15,7 +15,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 
 import edu.com.mum.domain.Category;
-import edu.com.mum.expection.CategoryNotFoundExpection;
+import edu.com.mum.expection.DataNotFoundException;
 import edu.com.mum.service.CategoryService;
 @Component
 @ControllerAdvice
@@ -32,8 +32,8 @@ public class CategoryControlAdvice {
           return categoryService.findAll();
     }
 	
-	@ExceptionHandler(CategoryNotFoundExpection.class)
-	public ModelAndView handleError(HttpServletRequest req, CategoryNotFoundExpection exception) {
+	@ExceptionHandler(DataNotFoundException.class)
+	public ModelAndView handleError(HttpServletRequest req, DataNotFoundException exception) {
 		 ModelAndView mav = new ModelAndView();
 		 mav.addObject("invalidCategoryId", exception.getFullMessage());
 			 mav.setViewName("CategoryNotFound");
