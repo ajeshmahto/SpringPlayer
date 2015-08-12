@@ -3,11 +3,16 @@ package edu.com.mum.domain;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Transient;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
@@ -127,6 +132,18 @@ public MultipartFile getProductImage() {
 	public void setQuantity(int quantity) {
 		this.quantity = quantity;
 	}
+	
+	@ManyToOne
+    // Defaults to table IF no Join Mentioned [ comment out Join column to see]
+	
+	private Category category;
 
+	public Category getCategory() {
+		return category;
+	}
+
+	public void setCategory(Category category) {
+		this.category = category;
+	}
 
 }
