@@ -54,6 +54,14 @@ public void delete(int id) {
 
 
 
+@Override
+public Product getProductByProductID(String id) {
+	
+	return productRepository.getProductByProductID(id);
+}
+
+
+
 
 
 

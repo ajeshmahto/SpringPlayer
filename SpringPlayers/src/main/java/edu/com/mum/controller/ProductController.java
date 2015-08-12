@@ -1,14 +1,22 @@
 package edu.com.mum.controller;
 
+import java.io.File;
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.util.StringUtils;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.multipart.MultipartFile;
 
 import edu.com.mum.domain.Product;
 import edu.com.mum.service.ProductService;
@@ -44,11 +52,36 @@ public class ProductController {
 	}
 	   
 	@RequestMapping(value = "/addProduct", method = RequestMethod.POST)
-	public String processAddNewProduct(@ModelAttribute("newProduct") Product productToBeAdded) {
- 
-		productService.save(productToBeAdded);
+	public String processAddNewProduct(@ModelAttribute("newProduct") @Valid Product productToBeAdded,
+			BindingResult bindingResult, HttpServletRequest request) {
+		if (bindingResult.hasErrors()) {
+			
+			return "addProduct";
+		}
+		
 
-	   	return "redirect:/products/productList";
+		String[] suppressedFields = bindingResult.getSuppressedFields();
+
+		if (suppressedFields.length > 0) {
+			throw new RuntimeException("Attempting to bind disallowed fields: " + StringUtils.arrayToCommaDelimitedString(suppressedFields));
+		}
+		
+		MultipartFile productImage = productToBeAdded.getProductImage();
+		String rootDirectory = request.getSession().getServletContext().getRealPath("/");
+			
+		//isEmpty means file exists BUT NO Content
+			if (productImage!=null && !productImage.isEmpty()) {
+		       try {
+		      	productImage.transferTo(new File(rootDirectory+"\\resources\\images\\"+productToBeAdded.getProductID() + ".png"));
+		       } catch (Exception e) {
+				throw new RuntimeException("Product Image saving failed", e);
+		   }
+		   }
+
+		
+		productService.save(productToBeAdded);
+		return "redirect:/products/productList";
+		
 	}
 	
 	@RequestMapping("/product_delete/{id}")

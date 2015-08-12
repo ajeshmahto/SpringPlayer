@@ -17,6 +17,9 @@
 <!-- use-expressions enables URL level authorization -->
 	<security:http use-expressions="true">
 	
+		<security:csrf disabled="true"/>
+	
+	
 	<!-- can Use ControllerAdice instead -->
 	<!--security:access-denied-handler error-page="/error-forbidden" /-->
 	

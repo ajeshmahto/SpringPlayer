@@ -4,6 +4,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
+import org.springframework.data.repository.query.Param;
+
 import edu.com.mum.domain.*;
 
 public  interface ProductService {
@@ -14,7 +16,8 @@ public  interface ProductService {
 	public void save(Product product);
 	public void delete(int id);
 
-	
+	public Product getProductByProductID(String id);
+
 
 	
 }

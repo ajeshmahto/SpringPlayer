@@ -22,4 +22,6 @@ public interface ProductRepository extends CrudRepository<Product, Integer>{
 	//public List<Product> getProductsByCategory(String category);
 	//public void save(Product product);
 
+	@Query("SELECT p FROM PRODUCT p where productID =:productId")
+	public Product getProductByProductID(@Param("productId") String id);
 }

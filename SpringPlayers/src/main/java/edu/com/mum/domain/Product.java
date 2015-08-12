@@ -9,6 +9,14 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Transient;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+
+import org.hibernate.validator.constraints.NotEmpty;
+import org.springframework.web.multipart.MultipartFile;
+
+import edu.com.mum.validator.ProductId;
+
 
 
 
@@ -22,30 +30,54 @@ public class Product {
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private int id;
 	
+	@NotEmpty
+	@ProductId
+	@Column(name="PRODUCTID")
+	String productID;
+	
+	@NotEmpty
+	@Size(min=4, max=50, message="{Size.name.validation}")
 	@Column(name="PRODUCTNAME")
 	private String name;
 	
+	@NotNull
 	@Column(name="PRICE")
 	private Float price;
 	
+	@NotEmpty
 	@Column(name="DETAILS")
 	private String details;
 	
+	@NotNull
 	@Column(name="QUANTITY")
 	private int quantity;
 	
 	/*@Transient
 	private Catagory catagory;*/
-
-
 	
-	public Product() {
-		// TODO Auto-generated constructor stub
+	@Transient
+	private MultipartFile  productImage;
+	
+	
+
+
+public String getProductID() {
+		return productID;
 	}
-	
-	/*public Catagory getCatagory() {
-		return catagory;
-	}*/
+
+	public void setProductID(String productID) {
+		this.productID = productID;
+	}
+
+public MultipartFile getProductImage() {
+		return productImage;
+	}
+
+	//@Column(name="PRODUCTIMAGE")
+	public void setProductImage(MultipartFile productImage) {
+		this.productImage = productImage;
+	}
+
 	
 	
 

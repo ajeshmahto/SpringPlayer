@@ -23,6 +23,7 @@
 	<div class="CSSTableGenerator" style="width: 600px; height: 150px;">
 		<table>
 			<tr>
+				<td>ID</td>
 				<td>Name</td>
 				<td>Price</td>
 				<td>Quantity</td>
@@ -35,6 +36,7 @@
 				<c:forEach items="${products}" var="product">
 				<tr>
 					<%-- <td>${product.category.name}</td> --%>
+					<td>${product.productID}</td>
 					<td>${product.name}</td>
 					<td>${product.price}</td>
 					<td>${product.quantity}</td>
