@@ -27,12 +27,12 @@ public class UserServiceImpl implements UserService {
 	@Autowired
 	private CreditionalRepository creditionalRepository;
 
-	@Override
+	
+  	@PreAuthorize("hasRole('ROLE_ADMIN')")
 	public void save(UserProfile userProfile) {
 		
 		customerRepository.save(userProfile);
-		save(userProfile.getUser());
-		
+		save(userProfile.getUser());	
 	}
 	
 	public List<UserProfile> getAllUsers() {
@@ -52,7 +52,7 @@ public class UserServiceImpl implements UserService {
 	}
 	
 	
-	@PreAuthorize("hasRole('ROLE_ADMIN')")
+
   	public void save(User user) {
 
   		PasswordEncoder passwordEncoder = new BCryptPasswordEncoder();   		

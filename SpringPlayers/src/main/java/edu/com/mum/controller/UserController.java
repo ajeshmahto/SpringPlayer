@@ -6,7 +6,7 @@ import java.util.List;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
-
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -29,13 +29,14 @@ public class UserController {
 
 	
 	@RequestMapping(value = "/registration", method = RequestMethod.GET)
+  	@PreAuthorize("hasRole('ROLE_USER')")   
     public String getRegistration(@ModelAttribute("userProfile") UserProfile userProfile) {
 
 		
         return "registration";
     }
 	
-	@RequestMapping(value = "/registration", method = RequestMethod.POST)
+	@RequestMapping(value = "/registration", method = RequestMethod.POST)  
     public String registrationPost( @ModelAttribute("userProfile") @Valid UserProfile userProfile, BindingResult result) {
 
 		if(result.hasErrors()) 
@@ -65,6 +66,7 @@ public class UserController {
 
 	
 	@RequestMapping("/user_delete/{id}")
+	//@PreAuthorize("hasRole('ROLE_ADMIN')")  
 	public String deleteUser(Model model, @PathVariable("id") long id) {
 		customerService.delete(id);
  		//model.addAttribute("users", customerService.getAllUsers());
@@ -73,6 +75,7 @@ public class UserController {
 	
 	
 	@RequestMapping(value = "/user_edit/{id}", method = RequestMethod.GET)
+  	@PreAuthorize("hasRole('ROLE_USER')")   
     public String editProduct(Model model, UserProfile userProfile, @PathVariable("id") long id) {
     
         userProfile = customerService.getUserById(id);
@@ -82,7 +85,7 @@ public class UserController {
     }
 	
 	
-	@RequestMapping(value = "/update", method = RequestMethod.POST)
+	@RequestMapping(value = "/update", method = RequestMethod.POST) 
     public String registrationUpdate( @ModelAttribute("userProfile") @Valid UserProfile userProfile, BindingResult result) {
 
 		if(result.hasErrors()) 

@@ -138,10 +138,7 @@
 						<form:input id="zipCode" path="shippingAddress.zipCode" type="text" />
 					</div>
 
-				
 
-		
-				
 				  <p id="buttons">
             		 <input id="submit" type="submit" value="Register">
        			  </p>
