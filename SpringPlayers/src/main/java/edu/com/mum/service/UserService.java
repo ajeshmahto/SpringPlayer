@@ -4,7 +4,7 @@ package edu.com.mum.service;
 
 import java.util.List;
 
-
+import edu.com.mum.domain.User;
 import edu.com.mum.domain.UserProfile;
 
 public interface UserService {
@@ -18,6 +18,8 @@ public interface UserService {
 	public UserProfile getUserById(Long userID);
 	
 	public void delete(Long userID);
+	
+	public void save(User user);
 	
 	//void update(Long userID, UserProfile userProfile);
 	
