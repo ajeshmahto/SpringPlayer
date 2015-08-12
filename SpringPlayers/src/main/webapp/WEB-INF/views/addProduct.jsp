@@ -45,12 +45,12 @@
 						<form:input id="productID" path="productID" />
 					</p>
 					
-					<%-- <p>
+					<p>
             <label for="category">Category </label>
              <form:select id="category" path="category.id" 
-                items="${categories}" itemLabel="name" itemValue="id"/>
+                items="${categories}" itemLabel="categoryName" itemValue="id"/>
         </p>
-          --%>
+         
 					<p>
 					<%-- <div style="text-align: center;">
 						<form:errors path="name" cssStyle="color : red;" />

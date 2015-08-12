@@ -25,6 +25,7 @@
 			<tr>
 				<td>ID</td>
 				<td>Name</td>
+				<td>Category</td>
 				<td>Price</td>
 				<td>Quantity</td>
 				<td>Details</td>
@@ -37,7 +38,9 @@
 				<tr>
 					<%-- <td>${product.category.name}</td> --%>
 					<td>${product.productID}</td>
+					
 					<td>${product.name}</td>
+					<td>${product.category.categoryName}</td>
 					<td>${product.price}</td>
 					<td>${product.quantity}</td>
 					<td>${product.details}</td>
