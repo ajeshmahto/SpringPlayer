@@ -15,7 +15,8 @@
 <script src="<spring:url value="/resources/js/cart.js" />"></script>
 </head>
 <body>
-
+        <p style="text-align:center;font-family: Papyrus,fantasy;
+	font-size: 30px;"> Welcome to World's Best Shopping Site!! </p>
 	<div id='cssmenu'>
 		<ul>
 			<li><a href='#'><span>Category</span></a></li>
@@ -24,6 +25,7 @@
 				<li><a href="<spring:url value="/Category/productCategory/${category.id}"/>">${category.categoryName}</a>
 			</c:forEach>
 		</ul>
+		
 	</div>
 	
 	<!-- Content -->
