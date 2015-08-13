@@ -131,5 +131,10 @@
         <put-attribute name="body" value="/WEB-INF/views/productCategory.jsp"/>
 
       </definition>
+      <definition name="cart" extends="baseLayout">
+        <put-attribute name="title" value="Your Cart" />
+        <put-attribute name="tagline" value="Your Cart" />
+        <put-attribute name="body" value="/WEB-INF/views/cart.jsp"/>
+      </definition>
     
     </tiles-definitions>

@@ -46,7 +46,7 @@
 		</ul>
 		
 	</li>
-	
+	<li><a href="<spring:url value="/cart"/>">Cart</a>
 	<security:authorize access="isAnonymous()">
 	<li><a href="<spring:url value="/login"/>">Login</a></li>
 	</security:authorize>

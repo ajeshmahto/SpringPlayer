@@ -3,14 +3,12 @@
 <html>
 <head>
 
-
-<link rel='stylesheet' href='style.css' media='screen' />
 <script
 	src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
 <!--[if lt IE 9]>
 <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 <![endif]-->
-<script src="../blocksit.min.js"></script>
+<script src="<spring:url value="/resources/js/cart.js" />"></script>
 
 
 </head>
@@ -28,8 +26,8 @@
 				</div>
 				<strong>${product.name}</strong>
 				<p>${product.details}</p>
-				<p> <a href="#">Edit|</a> <a href="#">Delete</a></p>
-				<a href="#">Add to Cart</a>
+				<p> <a href="#" >Edit|</a> <a href="#">Delete</a></p>
+				<a href="#" onclick="addToCart('${product.id}')">Add to Cart</a>
 				<div class="meta"></div>
 			</div>
       </c:forEach> 
