@@ -35,8 +35,8 @@ public class Product {
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private int id;
 	
-	@NotEmpty
-	@ProductId
+	//@NotEmpty
+	@ProductId(message="Id should be unique")
 	@Column(name="PRODUCTID")
 	String productID;
 	

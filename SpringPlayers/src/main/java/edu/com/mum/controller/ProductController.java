@@ -105,9 +105,26 @@ public class ProductController {
 	
     
     @RequestMapping(value = "/product_update", method = RequestMethod.POST)
-    public String updateProduct(@ModelAttribute Product product) {
-//        Category category = bookService.getCategory(book.getCategory().getId());
-//        book.setCategory(category);
+    public String updateProduct(@ModelAttribute Product product, BindingResult bindingResult, HttpServletRequest request) {
+
+    	
+    	String[] suppressedFields = bindingResult.getSuppressedFields();
+
+		if (suppressedFields.length > 0) {
+			throw new RuntimeException("Attempting to bind disallowed fields: " + StringUtils.arrayToCommaDelimitedString(suppressedFields));
+		}
+		
+		MultipartFile productImage = product.getProductImage();
+		String rootDirectory = request.getSession().getServletContext().getRealPath("/");
+			
+		//isEmpty means file exists BUT NO Content
+			if (productImage!=null && !productImage.isEmpty()) {
+		       try {
+		      	productImage.transferTo(new File(rootDirectory+"/resources/images/"+product.getProductID() + ".png"));
+		       } catch (Exception e) {
+				throw new RuntimeException("Product Image saving failed", e);
+		   }
+		   }
     	productService.save(product);
     	return "redirect:/products/productList";
     }

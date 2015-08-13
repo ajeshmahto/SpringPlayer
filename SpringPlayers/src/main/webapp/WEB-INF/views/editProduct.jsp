@@ -24,10 +24,23 @@
              <form:select id="category" path="category.id" items="${categories}"
                 itemLabel="name" itemValue="id"/>
         </p> --%>
+        
+        <p>
+					
+						<label for="productID">Product ID: </label>
+						<form:input id="productID" path="productID" />
+					</p>
 					<p>
 						<label for="name">Name: </label>
 						<form:input id="name" path="name" />
 					</p>
+					
+					<p>
+            <label for="category">Category </label>
+             <form:select id="category" path="category.id" 
+                items="${categories}" itemLabel="categoryName" itemValue="id"/>
+        </p>
+         
 					<p>
 						<label for="price">Price: </label>
 						<form:input id="price" path="price" />
