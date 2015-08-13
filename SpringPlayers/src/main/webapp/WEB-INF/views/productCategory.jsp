@@ -9,8 +9,29 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 </head>
 
+<script
+	src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<!--[if lt IE 9]>
+<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+<script src="<spring:url value="/resources/js/cart.js" />"></script>
+</head>
+<body>
+
+<div id='cssmenu'>
+		<ul>
+			<li><a href='#'><span>Category</span></a></li>
+			<c:forEach items="${categories}" var="category">
 
 
+				<spring:url value="Category/productCategory/{id}" var="show">
+					<spring:param name="id" value="${category.id}" />
+				</spring:url>
+
+				<li><a href="${show}"><span>${category.categoryName}</span></a></li>
+			</c:forEach>
+		</ul>
+	</div>
 
 	<section id="wrapper">
 
@@ -35,10 +56,10 @@
 	</section>
 	
 	<section>
-		<div class="jumbotron">
-			<div class="container">
-				<h1 class="alert alert-danger"> ${invalidCategoryId}</h1>
+		<div >
+			<div >
+				<h1 > ${invalidCategoryId}</h1>
 			</div>
 		</div>
 	</section>
-	
+	</body>
