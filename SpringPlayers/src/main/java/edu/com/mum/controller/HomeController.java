@@ -10,17 +10,13 @@ public class HomeController {
 
 	@RequestMapping("/")
 	public String welcome(Model model) {
-		model.addAttribute("greeting", "Welcome to Web Store!");
-		model.addAttribute("tagline", "The one and only amazing web store");
+		model.addAttribute("greeting", "Welcome to World's Best Shopping Store!");
+		model.addAttribute("tagline", "Shop like you have never before!!");
 		
 		return "welcome";
 	}
 	
-	@RequestMapping("/registration")
-	public String greeting() {
-		return "registration_template";
-	}
-	
+
 	
 	
 }

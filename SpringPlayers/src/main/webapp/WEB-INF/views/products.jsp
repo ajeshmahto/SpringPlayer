@@ -28,7 +28,7 @@
 				</div>
 				<strong>${product.name}</strong>
 				<p>${product.details}</p>
-				<p> <a href="#" >Edit|</a> <a href="#">Delete</a></p>
+				<!-- <p> <a href="#" >Edit|</a> <a href="#">Delete</a></p> -->
 				<a href="#" onclick="addToCart('${product.id}')">Add to Cart</a>
 				<div class="meta"></div>
 			</div>

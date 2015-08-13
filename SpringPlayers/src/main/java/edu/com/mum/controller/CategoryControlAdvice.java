@@ -12,11 +12,11 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.servlet.ModelAndView;
 
-
-
 import edu.com.mum.domain.Category;
+import edu.com.mum.domain.Product;
 import edu.com.mum.expection.DataNotFoundException;
 import edu.com.mum.service.CategoryService;
+import edu.com.mum.service.ProductService;
 @Component
 @ControllerAdvice
 
@@ -25,11 +25,22 @@ public class CategoryControlAdvice {
 	@Autowired
 	CategoryService categoryService;
 	
+	@Autowired
+	private ProductService productService;
+	
 	@ModelAttribute("categories")
     private List<Category> getCategories(Model model)
     {
     	 model.addAttribute("categories", categoryService.findAll());
           return categoryService.findAll();
+    }
+	
+	
+	@ModelAttribute("products")
+    private List<Product> getProducts(Model model)
+    {
+    	 model.addAttribute("products", productService.getAllProducts());
+          return productService.getAllProducts();
     }
 	
 	@ExceptionHandler(DataNotFoundException.class)
