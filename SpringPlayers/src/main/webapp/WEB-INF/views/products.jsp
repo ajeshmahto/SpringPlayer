@@ -24,7 +24,7 @@
 					<!-- <img
 						src="http://www.inwebson.com/demo/blocksit-js/demo2/images/img27.jpg" /> -->
 						
-						<img src="<c:url value="/resource/images/${product.productID}.png"></c:url>" alt="image" />
+						<img src="<c:url value="/resources/images/${product.productID}.png"></c:url>" alt="image" />
 				</div>
 				<strong>${product.name}</strong>
 				<p>${product.details}</p>
