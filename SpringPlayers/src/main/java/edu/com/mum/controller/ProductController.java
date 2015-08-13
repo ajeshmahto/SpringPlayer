@@ -72,7 +72,7 @@ public class ProductController {
 		//isEmpty means file exists BUT NO Content
 			if (productImage!=null && !productImage.isEmpty()) {
 		       try {
-		      	productImage.transferTo(new File(rootDirectory+"\\resources\\images\\"+productToBeAdded.getProductID() + ".png"));
+		      	productImage.transferTo(new File(rootDirectory+"/resources/images/"+productToBeAdded.getProductID() + ".png"));
 		       } catch (Exception e) {
 				throw new RuntimeException("Product Image saving failed", e);
 		   }
