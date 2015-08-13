@@ -28,7 +28,7 @@
     <td>Product Price</td>
     <td>Remove</td>
 </tr>
-  <c:set var="total" value="${0}"/>
+  <c:set var="total" value="0"/>
 
  <c:forEach items="${cartItems}" var="cart">
     <tr>
@@ -49,10 +49,13 @@
 
 
 </table>
-<input type="submit"  value="CheckOut"/>
+
 
 <br>
 <p style="text-align:center;text-color:red"> Total : ${total} </p>
+<br>
+<br>
+<input type="submit"  value="CheckOut"/>
 </div>
 </body>
 </html>
