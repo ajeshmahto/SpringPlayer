@@ -75,6 +75,21 @@ public class CartRestController {
 	}
 	
 	
+	@RequestMapping(value="/checkout", method=RequestMethod.GET)
 	
+	public String checkout(HttpServletRequest request) {
+		
+		 String sessionId = request.getSession(true).getId();
+		 Cart cart = cartService.getCartByCartID(sessionId);
+		 List<CartItem> cartItems= new ArrayList<CartItem>();
+		 cartItems= cartItemService.getCartItemByCartId(sessionId);
+		 if(cart!=null)
+		 {
+		   cartItemService.deleteAll(cartItems);
+		   cartService.deleteCart(cart);
+		 }
+		 return "checkout";
+		 
+	}
 
 }

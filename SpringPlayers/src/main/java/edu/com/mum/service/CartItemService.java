@@ -12,7 +12,7 @@ public interface CartItemService {
 	
 	public CartItem getCartItemByid(Long id);
 	public void delete(CartItem cartItem);
-	
+	public void deleteAll(List<CartItem> cartItems);
 		
 
 

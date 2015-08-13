@@ -21,12 +21,7 @@
 			<li><a href='#'><span>Category</span></a></li>
 			<c:forEach items="${categories}" var="category">
 
-
-				<spring:url value="Category/productCategory/{id}" var="show">
-					<spring:param name="id" value="${category.id}" />
-				</spring:url>
-
-				<li><a href="${show}"><span>${category.categoryName}</span></a></li>
+				<li><a href="<spring:url value="/Category/productCategory/${category.id}"/>">${category.categoryName}</a>
 			</c:forEach>
 		</ul>
 	</div>

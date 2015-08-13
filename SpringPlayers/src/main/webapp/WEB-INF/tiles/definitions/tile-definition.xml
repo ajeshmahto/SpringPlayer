@@ -129,12 +129,19 @@
         <put-attribute name="title" value="ProductCategory Display" />
         <put-attribute name="tagline" value="ProductCategory Display" />
         <put-attribute name="body" value="/WEB-INF/views/productCategory.jsp"/>
-
       </definition>
+      
       <definition name="cart" extends="baseLayout">
         <put-attribute name="title" value="Your Cart" />
         <put-attribute name="tagline" value="Your Cart" />
         <put-attribute name="body" value="/WEB-INF/views/cart.jsp"/>
       </definition>
+      
+      <definition name="checkout" extends="baseLayout">
+        <put-attribute name="title" value="Check Out" />
+        <put-attribute name="tagline" value="Check Out" />
+        <put-attribute name="body" value="/WEB-INF/views/checkout.jsp"/>
+      </definition>
+      
     
     </tiles-definitions>

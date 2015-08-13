@@ -8,20 +8,18 @@ import javax.persistence.Id;
 public class CartItem {
 	@Id @GeneratedValue
 	private Long id;
-//	@OneToMany(fetch=FetchType.EAGER)
-//	@PrimaryKeyJoinColumn
-//	private List<Product> products;
 	private Long quantity;
 	private Float total;
 	private int productId;
 	private String cartId;
-//	@ManyToOne(cascade= CascadeType.ALL,fetch = FetchType.EAGER)
-//    @JoinColumn(name = "cartId")
-//	private Cart cart;
+	private String productImageId;
+	private String productDescription;
+	private String productName;
+;
 	
 	
-	public CartItem()
-	{}
+	public CartItem(){}
+	
 	
 	public CartItem(Product product,String cartId)
 	{
@@ -29,6 +27,9 @@ public class CartItem {
 		this.cartId=cartId;
 		this.total=product.getPrice();
 		this.quantity=1L;
+		this.productDescription=product.getDetails();
+		this.productImageId=product.getProductID();
+		this.productName=product.getName();
 		
 		
 	}
@@ -40,13 +41,7 @@ public class CartItem {
 	public void setId(Long id) {
 		this.id = id;
 	}
-	
-//	public List<Product> getProducts() {
-//		return products;
-//	}
-//	public void setProducts(List<Product> products) {
-//		this.products = products;
-//	}
+
 	public Long getQuantity() {
 		return quantity;
 	}
@@ -59,12 +54,7 @@ public class CartItem {
 	public void setTotal(Float total) {
 		this.total = total;
 	}
-//	public Cart getCart() {
-//		return cart;
-//	}
-//	public void setCart(Cart cart) {
-//		this.cart = cart;
-//	}
+
 	public int getProductId() {
 		return productId;
 	}
@@ -78,6 +68,36 @@ public class CartItem {
 
 	public void setCartId(String cartId) {
 		this.cartId = cartId;
+	}
+
+
+	public String getProductImageId() {
+		return productImageId;
+	}
+
+
+	public void setProductImageId(String productImageId) {
+		this.productImageId = productImageId;
+	}
+
+
+	public String getProductDescription() {
+		return productDescription;
+	}
+
+
+	public void setProductDescription(String productDescription) {
+		this.productDescription = productDescription;
+	}
+
+
+	public String getProductName() {
+		return productName;
+	}
+
+
+	public void setProductName(String productName) {
+		this.productName = productName;
 	}
 
 }

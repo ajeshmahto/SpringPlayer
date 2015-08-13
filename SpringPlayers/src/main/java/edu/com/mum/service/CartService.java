@@ -5,7 +5,7 @@ import edu.com.mum.domain.Cart;
 public interface CartService {
 	
 	public Cart getCartByCartID(String cartId);
-	
+	public void deleteCart(Cart cart);
 		
 
 

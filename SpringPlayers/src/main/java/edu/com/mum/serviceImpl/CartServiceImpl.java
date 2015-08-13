@@ -20,5 +20,10 @@ public class CartServiceImpl implements CartService {
 		return cartRepository.getCartBycartId(cartId);
 		
 	}
+	
+	public void deleteCart(Cart cart)
+	{
+		cartRepository.delete(cart);
+	}
 
 }

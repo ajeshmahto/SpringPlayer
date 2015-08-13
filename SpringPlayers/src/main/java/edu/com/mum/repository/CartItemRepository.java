@@ -20,5 +20,7 @@ public interface CartItemRepository  extends CrudRepository<CartItem, String>
 	
 	public CartItem getCartItemByid(Long cartItemid) ;
 	
+	//public void deleteA(List<CartItem> cartItems);
+	
 	
 }

@@ -46,4 +46,9 @@ public class CartController {
 		return "cart";
 	}
 
+	@RequestMapping(value="/checkout", method=RequestMethod.GET)
+	public String checkout()
+	{
+		return "redirect:/rest/checkout";
+	}
 }

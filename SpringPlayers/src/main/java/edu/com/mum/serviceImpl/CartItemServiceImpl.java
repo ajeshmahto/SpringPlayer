@@ -49,4 +49,12 @@ public class CartItemServiceImpl implements CartItemService {
 		cartItemRepository.delete(cartItem);
 	}
 
+
+
+	@Override
+	public void deleteAll(List<CartItem> cartItems) {
+		cartItemRepository.delete(cartItems);
+		
+	}
+
 }
