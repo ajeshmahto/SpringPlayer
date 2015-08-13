@@ -19,8 +19,13 @@ import org.hibernate.validator.constraints.NotEmpty;
 @Entity(name= "USER")
 public class User { 
 	
-	 @Id
-	 @Column(name = "USERNAME", nullable = false, unique = true)
+	
+	@Id @GeneratedValue
+	@Column(name="USERID")
+	private Long id;
+	
+	
+	 @Column(name = "USERNAME")
 		@NotEmpty
 	String username;
 	

@@ -3,6 +3,7 @@ package edu.com.mum.serviceImpl;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import edu.com.mum.domain.Category;
@@ -20,6 +21,7 @@ public class CategoryServiceImpl implements CategoryService {
 	private List<Category> categories;
 
 	@Override
+	@PreAuthorize("hasRole('ROLE_ADMIN')")
 	public void save(Category category) {
 
 		categoryRepository.save(category);
