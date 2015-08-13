@@ -19,16 +19,32 @@ import org.hibernate.validator.constraints.NotEmpty;
 @Entity(name= "USER")
 public class User { 
 	
-	@Id @GeneratedValue
-	private Long id;
+	 @Id
+	 @Column(name = "USERNAME", nullable = false, unique = true)
+		@NotEmpty
+	String username;
 	
-	@NotEmpty
-	@Column(name="USER_NAME")
-	private String username;
+
+
 	
 	@NotEmpty
 	@Column(name="PASSWORD")
 	private String password;
+	
+	Boolean enabled;
+
+ 	public Boolean getEnabled() {
+		return enabled;
+	}
+
+
+	public void setEnabled(Boolean enabled) {
+		this.enabled = enabled;
+	}
+
+
+	@Column(name = "AUTHORITY")
+ 	private String authority;
 	
 	
 /*	@OneToMany(cascade=CascadeType.ALL,fetch=FetchType.EAGER, mappedBy="user")
@@ -39,9 +55,20 @@ public class User {
 	private List<PaymentInfo> paymentInfos = new ArrayList<PaymentInfo>();*/
 
 
+	public String getAuthority() {
+		return authority;
+	}
+
+
+	public void setAuthority(String authority) {
+		this.authority = authority;
+	}
+
+
 	@OneToOne(cascade = CascadeType.ALL, fetch=FetchType.EAGER)
 	@PrimaryKeyJoinColumn
 	private UserProfile userProfile;
+	
 
 
 	public User() {
@@ -55,9 +82,6 @@ public class User {
 	}
 
 
-	public Long getId() {
-		return id;
-	}
 	
 /*	public List<Order> getOrders() {
 		return orders;
@@ -80,11 +104,6 @@ public class User {
 
 	public UserProfile getUserProfile() {
 		return userProfile;
-	}
-
-
-	public void setId(Long id) {
-		this.id = id;
 	}
 
 

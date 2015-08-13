@@ -58,18 +58,18 @@
 	</security:http>
 	
 
-	<!-- <security:authentication-manager>
+	<security:authentication-manager>
 		<security:authentication-provider>
 			<security:password-encoder hash="bcrypt" />
 			<security:jdbc-user-service
 				data-source-ref="dataSource"
 				users-by-username-query="select username,password,enabled from user where username=?"
-				authorities-by-username-query="select username, role from user where username =?" />
+				authorities-by-username-query="select u1.username, u1.authority from user u1 where u1.username =?" />
 		</security:authentication-provider>
-	</security:authentication-manager> -->
+	</security:authentication-manager>
 
 
- 	<security:authentication-manager>
+<!--  	<security:authentication-manager>
 		<security:authentication-provider>
 			
 			<security:user-service>
@@ -81,5 +81,5 @@
 				<security:user name="ayman" password="ayman" authorities="ROLE_USER" />
 			</security:user-service>
 		</security:authentication-provider>
-	</security:authentication-manager> 
+	</security:authentication-manager>  -->
 </beans> 

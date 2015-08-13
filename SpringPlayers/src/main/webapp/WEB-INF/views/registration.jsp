@@ -47,7 +47,19 @@
 						<form:errors path="user.password" />
 					</div>
 				
+<br /><div >
 
+<form:select id="role" path="user.authority" >
+
+  <form:option value="ROLE_ADMIN">ADMIN</form:option>
+
+  <form:option value="ROLE_USER">USER</form:option>	 
+
+</form:select>
+
+
+
+</div>
 			
 				
 					<label for="firstName"><spring:message code="registration.form.firstname.label"/></label>
@@ -138,7 +150,8 @@
 						<form:input id="zipCode" path="shippingAddress.zipCode" type="text" />
 					</div>
 
-
+	<form:hidden path="user.enabled" value="TRUE"  />
+	
 				  <p id="buttons">
             		 <input id="submit" type="submit" value="Register">
        			  </p>

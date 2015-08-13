@@ -9,6 +9,7 @@ import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 
 import org.hibernate.validator.constraints.Email;
@@ -24,6 +25,8 @@ public class UserProfile {
 	private Long id;
 	
 	@OneToOne(cascade=CascadeType.ALL,fetch=FetchType.EAGER)
+	//@OneToOne(fetch=FetchType.LAZY) 
+	@JoinColumn(name="USERNAME") 
 	private User user;
 	
 	@Column(name="FIRST_NAME")
