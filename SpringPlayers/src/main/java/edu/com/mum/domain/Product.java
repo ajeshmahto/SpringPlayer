@@ -63,7 +63,9 @@ public class Product {
 	@Transient
 	private MultipartFile  productImage;
 	
-	
+	@ManyToOne
+    
+	private Category category;
 
 
 public String getProductID() {
@@ -133,10 +135,7 @@ public MultipartFile getProductImage() {
 		this.quantity = quantity;
 	}
 	
-	@ManyToOne
-    // Defaults to table IF no Join Mentioned [ comment out Join column to see]
 	
-	private Category category;
 
 	public Category getCategory() {
 		return category;

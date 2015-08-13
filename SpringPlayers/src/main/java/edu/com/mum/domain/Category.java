@@ -31,6 +31,11 @@ public class Category {
 	@Column(name="categoryName")
 	private String categoryName;
 	
+	 @OneToMany(mappedBy="category",fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+	    // Defaults to table IF no Join Mentioned [ comment out Join column to see]
+	 @PrimaryKeyJoinColumn
+	 private List<Product> products;
+	
 	public Long getId() {
 		return id;
 	}
@@ -50,10 +55,7 @@ public class Category {
 	}
 
 	
-	 @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-	    // Defaults to table IF no Join Mentioned [ comment out Join column to see]
-	 @PrimaryKeyJoinColumn
-	 private List<Product> products;
+	
 	 
 	 public List<Product> getProducts() {
 			return products;
