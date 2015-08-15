@@ -31,6 +31,10 @@
 	  <security:intercept-url pattern="/products/addProduct" access="hasRole('ROLE_ADMIN')" />  
 	  <security:intercept-url pattern="/products/productList" access="hasRole('ROLE_ADMIN')" />  
 	  <security:intercept-url pattern="/Category/categoryList" access="hasRole('ROLE_ADMIN')" /> 
+	  
+<!-- 	  These are edit pages and I noticed that the user can't gain access to them because the user is not allow
+	  to access the previous page which is userList or ProductList for example. But if the user get the link of them
+	  like /users/user_edit/1 it can access this page.  -->
  	  <security:intercept-url pattern="/users/user_edit/**" access="hasRole('ROLE_ADMIN')" />   
 	  <security:intercept-url pattern="/products/product_edit/**" access="hasRole('ROLE_ADMIN')" /> 
 	  <security:intercept-url pattern="/Category/category_edit/**" access="hasRole('ROLE_ADMIN')" /> 

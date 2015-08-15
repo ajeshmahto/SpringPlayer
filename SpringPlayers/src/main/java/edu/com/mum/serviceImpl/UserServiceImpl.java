@@ -28,7 +28,7 @@ public class UserServiceImpl implements UserService {
 	private CreditionalRepository creditionalRepository;
 
 	
-  	//@PreAuthorize("hasRole('ROLE_ADMIN')")
+  
 	public void save(UserProfile userProfile) {
 		
 		customerRepository.save(userProfile);
@@ -50,13 +50,23 @@ public class UserServiceImpl implements UserService {
 		customerRepository.delete(userID);
 		
 	}
-	
+	/**
+	 * I've created this method just for making a unauthorized users can't have access to the 
+	 * update page. At the same time I wanted them to access the registration page. so if I putted this
+	 * role on the top of save it would restrict anyone of gaining access to registration page which 
+	 * is not normal. I just called save method inside this method.
+	 * 
+	 */
 	@PreAuthorize("hasRole('ROLE_ADMIN')")
 	public void update(UserProfile userProfile) {
 		save(userProfile);	
 	}
 
-
+	/**
+	 * instead of having password encrypted in the save method, I used another method for doing this.
+	 * this method is private so I could just use it inside this class as a helper method.
+	 * */
+	
   	private void save(User user) {
 
   		PasswordEncoder passwordEncoder = new BCryptPasswordEncoder();   		
@@ -65,8 +75,6 @@ public class UserServiceImpl implements UserService {
   		
   		creditionalRepository.save(user);
 	}
-/*	public void update(Long userID, UserProfile userProfile) {
-		customerRepository.update(userID, userProfile);
-	}*/
+
 	
 }

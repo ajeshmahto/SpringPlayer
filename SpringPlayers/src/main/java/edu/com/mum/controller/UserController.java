@@ -103,7 +103,10 @@ public class UserController {
     }
 	
 	
-	
+	/**
+	 * ModelAttribute on the top of the method is saving time. and we can apply that on all the 
+	 * users modelAttributes in jsp pages.
+	 * */
 	
 	@ModelAttribute("users")	   
 	List<UserProfile> UserList(Model model) 

@@ -25,7 +25,6 @@ public class UserProfile {
 	private Long id;
 	
 	@OneToOne(cascade=CascadeType.ALL,fetch=FetchType.EAGER)
-	//@OneToOne(fetch=FetchType.LAZY) 
 	@JoinColumn(name="USERNAME") 
 	private User user;
 	
@@ -44,7 +43,11 @@ public class UserProfile {
 	
 	@Column(name="PHONE")
 	private String phone;
-	
+	/**
+	 * Embedded Entities is making nested tables. Nested tables allow you to have hard link
+	 * relationship particularly if the relationship is one to many. They are useful in situations
+	 * where you may not want to have the expense of a computed join.
+	 * */
 	@Embedded
 	@AttributeOverrides({
 		@AttributeOverride(name="lineOne", column=@Column(name="SHIPPING_LINE_ONE")),
